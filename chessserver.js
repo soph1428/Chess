@@ -3,7 +3,7 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
-app.get("/chess.html", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/chess.html");
 });
 

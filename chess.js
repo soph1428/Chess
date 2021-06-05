@@ -1,8 +1,8 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-//Heroku: https://fun-activities-2.herokuapp.com
-var socket = io.connect("https://fun-activities-2.herokuapp.com");
+//Heroku: https://fun-activities-2-chess.herokuapp.com
+var socket = io.connect("https://fun-activities-2-chess.herokuapp.com");
 var codeText = document.getElementById("codetext");
 var gameCode = Math.random().toString(36).substring(7);
 var gameInput = document.getElementById("gameinput");
