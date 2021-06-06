@@ -92,134 +92,134 @@ var brownSquare29 = document.getElementById("brownSquare29");
 var brownSquare30 = document.getElementById("brownSquare30");
 var brownSquare31 = document.getElementById("brownSquare31");
 var brownSquare32 = document.getElementById("brownSquare32");
-tanSquare1.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare1.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare2.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare2.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare3.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare3.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare4.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare4.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare5.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare5.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare6.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare6.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare7.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare7.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare8.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare8.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare9.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare9.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare10.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare10.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare11.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare11.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare12.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare12.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare13.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare13.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare14.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare14.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare15.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare15.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare16.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare16.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare17.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare17.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare18.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare18.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare19.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare19.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare20.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare20.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare21.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare21.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare22.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare22.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare23.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare23.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare24.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare24.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare25.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare25.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare26.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare26.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare27.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare27.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare28.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare28.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare29.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare29.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare30.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare30.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare31.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare31.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare32.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare32.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare1.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare1.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare2.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare2.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare3.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare3.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare4.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare4.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare5.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare5.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare6.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare6.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare7.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare7.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare8.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare8.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare9.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare9.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare10.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare10.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare11.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare11.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare12.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare12.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare13.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare13.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare14.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare14.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare15.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare15.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare16.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare16.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare17.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare17.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare18.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare18.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare19.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare19.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare20.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare20.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare21.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare21.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare22.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare22.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare23.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare23.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare24.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare24.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare25.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare25.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare26.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare26.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare27.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare27.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare28.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare28.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare29.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare29.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare30.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare30.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare31.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare31.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare32.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare32.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
+tanSquare1.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10}px`;
+tanSquare1.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+tanSquare2.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 125}px`;
+tanSquare2.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+tanSquare3.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 250}px`;
+tanSquare3.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+tanSquare4.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 375}px`;
+tanSquare4.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+tanSquare5.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+tanSquare5.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+tanSquare6.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 187.5}px`;
+tanSquare6.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+tanSquare7.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 312.5}px`;
+tanSquare7.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+tanSquare8.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 437.5}px`;
+tanSquare8.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+tanSquare9.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10}px`;
+tanSquare9.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+tanSquare10.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 125}px`;
+tanSquare10.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+tanSquare11.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 250}px`;
+tanSquare11.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+tanSquare12.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 375}px`;
+tanSquare12.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+tanSquare13.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+tanSquare13.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+tanSquare14.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 187.5}px`;
+tanSquare14.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+tanSquare15.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 312.5}px`;
+tanSquare15.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+tanSquare16.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 437.5}px`;
+tanSquare16.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+tanSquare17.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10}px`;
+tanSquare17.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+tanSquare18.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 125}px`;
+tanSquare18.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+tanSquare19.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 250}px`;
+tanSquare19.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+tanSquare20.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 375}px`;
+tanSquare20.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+tanSquare21.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+tanSquare21.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+tanSquare22.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 187.5}px`;
+tanSquare22.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+tanSquare23.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 312.5}px`;
+tanSquare23.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+tanSquare24.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 437.5}px`;
+tanSquare24.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+tanSquare25.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10}px`;
+tanSquare25.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+tanSquare26.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 125}px`;
+tanSquare26.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+tanSquare27.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 250}px`;
+tanSquare27.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+tanSquare28.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 375}px`;
+tanSquare28.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+tanSquare29.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+tanSquare29.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+tanSquare30.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 187.5}px`;
+tanSquare30.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+tanSquare31.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 312.5}px`;
+tanSquare31.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+tanSquare32.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 437.5}px`;
+tanSquare32.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+brownSquare1.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+brownSquare1.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+brownSquare2.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 125}px`;
+brownSquare2.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+brownSquare3.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 250}px`;
+brownSquare3.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+brownSquare4.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 375}px`;
+brownSquare4.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+brownSquare5.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 62.5}px`;
+brownSquare5.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+brownSquare6.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 187.5}px`;
+brownSquare6.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+brownSquare7.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 312.5}px`;
+brownSquare7.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+brownSquare8.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 437.5}px`;
+brownSquare8.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 62.5}px`;
+brownSquare9.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+brownSquare9.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+brownSquare10.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 125}px`;
+brownSquare10.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+brownSquare11.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 250}px`;
+brownSquare11.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+brownSquare12.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 375}px`;
+brownSquare12.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 125}px`;
+brownSquare13.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 62.5}px`;
+brownSquare13.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+brownSquare14.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 187.5}px`;
+brownSquare14.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+brownSquare15.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 312.5}px`;
+brownSquare15.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+brownSquare16.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 437.5}px`;
+brownSquare16.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 187.5}px`;
+brownSquare17.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+brownSquare17.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+brownSquare18.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 125}px`;
+brownSquare18.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+brownSquare19.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 250}px`;
+brownSquare19.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+brownSquare20.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 375}px`;
+brownSquare20.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 250}px`;
+brownSquare21.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 62.5}px`;
+brownSquare21.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+brownSquare22.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 187.5}px`;
+brownSquare22.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+brownSquare23.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 312.5}px`;
+brownSquare23.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+brownSquare24.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 437.5}px`;
+brownSquare24.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 312.5}px`;
+brownSquare25.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5}px`;
+brownSquare25.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+brownSquare26.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 125}px`;
+brownSquare26.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+brownSquare27.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 250}px`;
+brownSquare27.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+brownSquare28.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 + 62.5 + 375}px`;
+brownSquare28.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 375}px`;
+brownSquare29.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 62.5}px`;
+brownSquare29.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+brownSquare30.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 187.5}px`;
+brownSquare30.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+brownSquare31.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 312.5}px`;
+brownSquare31.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
+brownSquare32.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 10 - 62.5 + 437.5}px`;
+brownSquare32.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10 + 437.5}px`;
 
 let checkerboard = document.getElementById("checkerboard");
 let player1TurnText = document.getElementById("player1TurnText");
@@ -254,7 +254,6 @@ document.addEventListener("touchstart", (event) => {
     || square.contains(event.target) && square.id.includes("brown") ||
     square.contains(event.target) && square.children[0].id.includes("white")
     || square.contains(event.target) && square.children[0].id.includes("black")) {
-        console.log("canvas contains event target");
         document.body.style.overflow = "hidden";
     }
 });
@@ -1612,10 +1611,10 @@ function moveBlackKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1659,7 +1658,7 @@ function moveBlackKnight1(event) {
     if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2423,10 +2422,10 @@ function moveBlackKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2734,7 +2733,7 @@ function moveWhitePawn1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2746,10 +2745,11 @@ function moveWhitePawn1(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare5.contains(whitePawn1)) {
+            console.log("hi");
             socket.emit("white", {
                 "white": whitePawn1.id,
                 "child": child.id
@@ -2758,10 +2758,10 @@ function moveWhitePawn1(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5).toFixed(3)}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5).toFixed(3)}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2807,7 +2807,7 @@ function moveWhitePawn2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2819,7 +2819,7 @@ function moveWhitePawn2(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare5.contains(whitePawn2)) {
@@ -2831,10 +2831,10 @@ function moveWhitePawn2(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5).toFixed(3)}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5).toFixed(3)}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2880,7 +2880,7 @@ function moveWhitePawn3(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn3.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2892,7 +2892,7 @@ function moveWhitePawn3(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn3.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare6.contains(whitePawn3)) {
@@ -2903,10 +2903,10 @@ function moveWhitePawn3(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5).toFixed(1)}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5).toFixed(1)}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2952,7 +2952,7 @@ function moveWhitePawn4(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2964,7 +2964,7 @@ function moveWhitePawn4(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare6.contains(whitePawn4)) {
@@ -2976,10 +2976,10 @@ function moveWhitePawn4(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3025,7 +3025,7 @@ function moveWhitePawn5(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3037,7 +3037,7 @@ function moveWhitePawn5(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare7.contains(whitePawn5)) {
@@ -3049,10 +3049,10 @@ function moveWhitePawn5(event) {
     }
 }
 //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3098,7 +3098,7 @@ function moveWhitePawn6(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn6.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3110,7 +3110,7 @@ function moveWhitePawn6(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn6.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare7.contains(whitePawn6)) {
@@ -3121,10 +3121,10 @@ function moveWhitePawn6(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+&& child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3170,7 +3170,7 @@ function moveWhitePawn7(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn7.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3182,7 +3182,7 @@ function moveWhitePawn7(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn7.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare8.contains(whitePawn7)) {
@@ -3193,11 +3193,11 @@ function moveWhitePawn7(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
-&& child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px`
+    || child.children.length > 0 && child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) - 62.5}px`
+    && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3242,7 +3242,7 @@ function moveWhitePawn8(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
 && child.style.left == whitePawn8.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3254,7 +3254,7 @@ function moveWhitePawn8(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
 && child.style.left == whitePawn8.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare8.contains(whitePawn8)) {
@@ -3265,11 +3265,11 @@ function moveWhitePawn8(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
-&& child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px`
+    || child.children.length > 0 && child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) - 62.5}px`
+    && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3520,10 +3520,10 @@ function moveWhiteKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4331,10 +4331,10 @@ function moveWhiteKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {

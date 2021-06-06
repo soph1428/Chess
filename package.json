@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.7",
     "socket.io": "^4.1.2"
   },
   "scripts": {
-    "start": "node chessserver.js"
+    "start": "node chessserver.js",
+    "nodemon": "nodemon chessserver.js"
   }
 }
