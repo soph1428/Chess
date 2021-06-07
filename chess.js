@@ -17,6 +17,7 @@ codeText.innerHTML = "Code: " + gameCode;
 
 socket.emit("new game", gameCode);
 
+
 gameInput.addEventListener("keypress", (event) => {
     if (event.key == "Enter") {
         socket.emit("join game", gameInput.value);
@@ -94,6 +95,8 @@ var brownSquare29 = document.getElementById("brownSquare29");
 var brownSquare30 = document.getElementById("brownSquare30");
 var brownSquare31 = document.getElementById("brownSquare31");
 var brownSquare32 = document.getElementById("brownSquare32");
+tanSquare1.style.left = "0px";
+tanSquare1.style.top = "0px";
 tanSquare2.style.left = `125px`;
 tanSquare3.style.left = `250px`;
 tanSquare4.style.left = `375px`;
@@ -105,6 +108,7 @@ tanSquare7.style.left = `312.5px`;
 tanSquare7.style.top = `62.5px`;
 tanSquare8.style.left = `437.5px`;
 tanSquare8.style.top = `62.5px`;
+tanSquare9.style.left = "0px";
 tanSquare9.style.top = `125px`;
 tanSquare10.style.left = `125px`;
 tanSquare10.style.top = `125px`;
@@ -120,6 +124,7 @@ tanSquare15.style.left = `312.5px`;
 tanSquare15.style.top = `187.5px`;
 tanSquare16.style.left = `437.5px`;
 tanSquare16.style.top = `187.5px`;
+tanSquare17.style.left = "0px";
 tanSquare17.style.top = `250px`;
 tanSquare18.style.left = `125px`;
 tanSquare18.style.top = `250px`;
@@ -135,6 +140,7 @@ tanSquare23.style.left = `312.5px`;
 tanSquare23.style.top = `312.5px`;
 tanSquare24.style.left = `437.5px`;
 tanSquare24.style.top = `312.5px`;
+tanSquare25.style.left = "0px";
 tanSquare25.style.top = `375px`;
 tanSquare26.style.left = `125px`;
 tanSquare26.style.top = `375px`;
@@ -151,9 +157,14 @@ tanSquare31.style.top = `437.5px`;
 tanSquare32.style.left = `437.5px`;
 tanSquare32.style.top = `437.5px`;
 brownSquare1.style.left = `62.5px`;
+brownSquare1.style.top = "0px";
 brownSquare2.style.left = `${62.5 + 125}px`;
+brownSquare2.style.top = "0px";
 brownSquare3.style.left = `${62.5 + 250}px`;
+brownSquare3.style.top = "0px";
 brownSquare4.style.left = `${62.5 + 375}px`;
+brownSquare4.style.top = "0px";
+brownSquare5.style.left = "0px";
 brownSquare5.style.top = `62.5px`;
 brownSquare6.style.left = `${62.5 + 62.5}px`;
 brownSquare6.style.top = `62.5px`;
@@ -169,6 +180,7 @@ brownSquare11.style.left = `${62.5 + 250}px`;
 brownSquare11.style.top = `125px`;
 brownSquare12.style.left = `${62.5 + 375}px`;
 brownSquare12.style.top = `125px`;
+brownSquare13.style.left = "0px";
 brownSquare13.style.top = `187.5px`;
 brownSquare14.style.left = `${62.5 + 62.5}px`;
 brownSquare14.style.top = `187.5px`;
@@ -184,6 +196,7 @@ brownSquare19.style.left = `${62.5 + 250}px`;
 brownSquare19.style.top = `250px`;
 brownSquare20.style.left = `${62.5 + 375}px`;
 brownSquare20.style.top = `250px`;
+brownSquare21.style.left = "0px";
 brownSquare21.style.top = `312.5px`;
 brownSquare22.style.left = `${62.5 + 62.5}px`;
 brownSquare22.style.top = `312.5px`;
@@ -199,6 +212,7 @@ brownSquare27.style.left = `${62.5 + 250}px`;
 brownSquare27.style.top = `375px`;
 brownSquare28.style.left = `${62.5 + 375}px`;
 brownSquare28.style.top = `375px`;
+brownSquare29.style.left = "0px";
 brownSquare29.style.top = `437.5px`;
 brownSquare30.style.left = `${62.5 + 62.5}px`;
 brownSquare30.style.top = `437.5px`;
@@ -1455,7 +1469,7 @@ function moveBlackRook1(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
-&& child.style.left == blackRook1.parentElement.style.left) {
+&& child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -1480,7 +1494,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
-&& child.style.left == blackRook1.parentElement.style.left) {
+&& child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -1505,7 +1519,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
-&& child.style.top == blackRook1.parentElement.style.top) {
+&& child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -1530,7 +1544,7 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
-&& child.style.top == blackRook1.parentElement.style.top) {
+&& child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -1770,9 +1784,11 @@ function moveBlackBishop1(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
-    child.children.length > 0 && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))
+    && child.children[0].id.includes("white") || child.children.length > 0 &&
+    Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))
+    && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -1934,9 +1950,9 @@ function moveBlackQueen(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
     child.children.length > 0 && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -1961,7 +1977,7 @@ function moveBlackQueen(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
-&& child.style.left == blackQueen.parentElement.style.left) {
+&& child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -1986,7 +2002,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
-&& child.style.left == blackQueen.parentElement.style.left) {
+&& child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2011,7 +2027,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-&& child.style.top == blackQueen.parentElement.style.top) {
+&& child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2036,7 +2052,7 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-&& child.style.top == blackQueen.parentElement.style.top) {
+&& child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2094,7 +2110,7 @@ function moveBlackKing(event) {
 }
 //oneSpaceUpHit
 if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == blackKing.parentElement.style.left) {
+&& child.style.left == blackKing.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2118,7 +2134,7 @@ if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, bl
 }
 //oneSpaceLeftHit
 if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
-&& child.style.top == blackKing.parentElement.style.top) {
+&& child.style.top == blackKing.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2142,7 +2158,7 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 }
 //oneSpaceDownHit
 if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == blackKing.parentElement.style.left) {
+&& child.style.left == blackKing.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2166,7 +2182,7 @@ if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, bl
 }
 //oneSpaceRightHit
 if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
-&& child.style.top == blackKing.parentElement.style.top) {
+&& child.style.top == blackKing.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2192,9 +2208,9 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 }
 //diagonalSpaceUpHit
 if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2220,9 +2236,9 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 }
 //diagonalSpaceDownHit
 if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2340,9 +2356,9 @@ function moveBlackBishop2(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
     child.children.length > 0 && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -2571,7 +2587,7 @@ function moveBlackRook2(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
-&& child.style.left == blackRook2.parentElement.style.left) {
+&& child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2596,7 +2612,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
-&& child.style.left == blackRook2.parentElement.style.left) {
+&& child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2621,7 +2637,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
-&& child.style.top == blackRook2.parentElement.style.top) {
+&& child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2646,7 +2662,7 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
-&& child.style.top == blackRook2.parentElement.style.top) {
+&& child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -3364,7 +3380,7 @@ function moveWhiteRook1(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
-&& child.style.left == whiteRook1.parentElement.style.left) {
+&& child.style.left == whiteRook1.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3389,7 +3405,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
-&& child.style.left == whiteRook1.parentElement.style.left) {
+&& child.style.left == whiteRook1.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3414,7 +3430,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
-&& child.style.top == whiteRook1.parentElement.style.top) {
+&& child.style.top == whiteRook1.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3439,7 +3455,7 @@ Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
-&& child.style.top == whiteRook1.parentElement.style.top) {
+&& child.style.top == whiteRook1.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3679,9 +3695,9 @@ function moveWhiteBishop1(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
     child.children.length > 0 && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3843,9 +3859,9 @@ function moveWhiteQueen(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
     child.children.length > 0 && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3870,7 +3886,7 @@ function moveWhiteQueen(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
-&& child.style.left == whiteQueen.parentElement.style.left) {
+&& child.style.left == whiteQueen.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3895,7 +3911,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
-&& child.style.left == whiteQueen.parentElement.style.left) {
+&& child.style.left == whiteQueen.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3920,7 +3936,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-&& child.style.top == whiteQueen.parentElement.style.top) {
+&& child.style.top == whiteQueen.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -3945,7 +3961,7 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-&& child.style.top == whiteQueen.parentElement.style.top) {
+&& child.style.top == whiteQueen.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4003,7 +4019,7 @@ function moveWhiteKing(event) {
 }
 //oneSpaceUpHit
 if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == whiteKing.parentElement.style.left) {
+&& child.style.left == whiteKing.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4027,7 +4043,7 @@ if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, wh
 }
 //oneSpaceLeftHit
 if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
-&& child.style.top == whiteKing.parentElement.style.top) {
+&& child.style.top == whiteKing.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4051,7 +4067,7 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 }
 //oneSpaceDownHit
 if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == whiteKing.parentElement.style.left) {
+&& child.style.left == whiteKing.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4075,7 +4091,7 @@ if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, wh
 }
 //oneSpaceRightHit
 if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
-&& child.style.top == whiteKing.parentElement.style.top) {
+&& child.style.top == whiteKing.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4101,9 +4117,9 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 }
 //diagonalSpaceUpHit
 if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4129,9 +4145,9 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 }
 //diagonalSpaceDownHit
 if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4249,9 +4265,9 @@ function moveWhiteBishop2(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
     child.children.length > 0 && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -4480,7 +4496,7 @@ function moveWhiteRook2(event) {
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
 Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
-&& child.style.left == whiteRook2.parentElement.style.left) {
+&& child.style.left == whiteRook2.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4505,7 +4521,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
 Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
-&& child.style.left == whiteRook2.parentElement.style.left) {
+&& child.style.left == whiteRook2.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4530,7 +4546,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
 Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
-&& child.style.top == whiteRook2.parentElement.style.top) {
+&& child.style.top == whiteRook2.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4555,7 +4571,7 @@ Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.sty
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
 Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
-&& child.style.top == whiteRook2.parentElement.style.top) {
+&& child.style.top == whiteRook2.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
