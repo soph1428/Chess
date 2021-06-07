@@ -1,4 +1,5 @@
 const canvas = document.getElementById("canvas");
+document.querySelector("p").style.marginTop = `${canvas.getBoundingClientRect().top + canvas.height + window.scrollY - 90}px`;
 const ctx = canvas.getContext("2d");
 
 //Heroku: https://fun-activities-2-chess.herokuapp.com
@@ -93,134 +94,118 @@ var brownSquare29 = document.getElementById("brownSquare29");
 var brownSquare30 = document.getElementById("brownSquare30");
 var brownSquare31 = document.getElementById("brownSquare31");
 var brownSquare32 = document.getElementById("brownSquare32");
-tanSquare1.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare1.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare2.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare2.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare3.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare3.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare4.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare4.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-tanSquare5.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare5.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare6.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare6.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare7.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare7.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare8.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare8.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-tanSquare9.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare9.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare10.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare10.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare11.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare11.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare12.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare12.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-tanSquare13.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare13.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare14.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare14.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare15.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare15.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare16.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare16.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-tanSquare17.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare17.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare18.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare18.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare19.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare19.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare20.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare20.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-tanSquare21.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare21.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare22.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare22.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare23.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare23.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare24.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare24.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-tanSquare25.style.left = `${canvas.getBoundingClientRect().left + 10}px`;
-tanSquare25.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare26.style.left = `${canvas.getBoundingClientRect().left + 10 + 125}px`;
-tanSquare26.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare27.style.left = `${canvas.getBoundingClientRect().left + 10 + 250}px`;
-tanSquare27.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare28.style.left = `${canvas.getBoundingClientRect().left + 10 + 375}px`;
-tanSquare28.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-tanSquare29.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-tanSquare29.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare30.style.left = `${canvas.getBoundingClientRect().left + 10 + 187.5}px`;
-tanSquare30.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare31.style.left = `${canvas.getBoundingClientRect().left + 10 + 312.5}px`;
-tanSquare31.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-tanSquare32.style.left = `${canvas.getBoundingClientRect().left + 10 + 437.5}px`;
-tanSquare32.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare1.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare1.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare2.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare2.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare3.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare3.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare4.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare4.style.top = `${canvas.getBoundingClientRect().top + 10}px`;
-brownSquare5.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare5.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare6.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare6.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare7.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare7.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare8.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare8.style.top = `${canvas.getBoundingClientRect().top + 10 + 62.5}px`;
-brownSquare9.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare9.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare10.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare10.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare11.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare11.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare12.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare12.style.top = `${canvas.getBoundingClientRect().top + 10 + 125}px`;
-brownSquare13.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare13.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare14.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare14.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare15.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare15.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare16.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare16.style.top = `${canvas.getBoundingClientRect().top + 10 + 187.5}px`;
-brownSquare17.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare17.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare18.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare18.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare19.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare19.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare20.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare20.style.top = `${canvas.getBoundingClientRect().top + 10 + 250}px`;
-brownSquare21.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare21.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare22.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare22.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare23.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare23.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare24.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare24.style.top = `${canvas.getBoundingClientRect().top + 10 + 312.5}px`;
-brownSquare25.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5}px`;
-brownSquare25.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare26.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 125}px`;
-brownSquare26.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare27.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 250}px`;
-brownSquare27.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare28.style.left = `${canvas.getBoundingClientRect().left + 10 + 62.5 + 375}px`;
-brownSquare28.style.top = `${canvas.getBoundingClientRect().top + 10 + 375}px`;
-brownSquare29.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 62.5}px`;
-brownSquare29.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare30.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 187.5}px`;
-brownSquare30.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare31.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 312.5}px`;
-brownSquare31.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
-brownSquare32.style.left = `${canvas.getBoundingClientRect().left + 10 - 62.5 + 437.5}px`;
-brownSquare32.style.top = `${canvas.getBoundingClientRect().top + 10 + 437.5}px`;
+tanSquare2.style.left = `125px`;
+tanSquare3.style.left = `250px`;
+tanSquare4.style.left = `375px`;
+tanSquare5.style.left = `62.5px`;
+tanSquare5.style.top = `62.5px`;
+tanSquare6.style.left = `187.5px`;
+tanSquare6.style.top = `62.5px`;
+tanSquare7.style.left = `312.5px`;
+tanSquare7.style.top = `62.5px`;
+tanSquare8.style.left = `437.5px`;
+tanSquare8.style.top = `62.5px`;
+tanSquare9.style.top = `125px`;
+tanSquare10.style.left = `125px`;
+tanSquare10.style.top = `125px`;
+tanSquare11.style.left = `250px`;
+tanSquare11.style.top = `125px`;
+tanSquare12.style.left = `375px`;
+tanSquare12.style.top = `125px`;
+tanSquare13.style.left = `62.5px`;
+tanSquare13.style.top = `187.5px`;
+tanSquare14.style.left = `187.5px`;
+tanSquare14.style.top = `187.5px`;
+tanSquare15.style.left = `312.5px`;
+tanSquare15.style.top = `187.5px`;
+tanSquare16.style.left = `437.5px`;
+tanSquare16.style.top = `187.5px`;
+tanSquare17.style.top = `250px`;
+tanSquare18.style.left = `125px`;
+tanSquare18.style.top = `250px`;
+tanSquare19.style.left = `250px`;
+tanSquare19.style.top = `250px`;
+tanSquare20.style.left = `375px`;
+tanSquare20.style.top = `250px`;
+tanSquare21.style.left = `62.5px`;
+tanSquare21.style.top = `312.5px`;
+tanSquare22.style.left = `187.5px`;
+tanSquare22.style.top = `312.5px`;
+tanSquare23.style.left = `312.5px`;
+tanSquare23.style.top = `312.5px`;
+tanSquare24.style.left = `437.5px`;
+tanSquare24.style.top = `312.5px`;
+tanSquare25.style.top = `375px`;
+tanSquare26.style.left = `125px`;
+tanSquare26.style.top = `375px`;
+tanSquare27.style.left = `250px`;
+tanSquare27.style.top = `375px`;
+tanSquare28.style.left = `375px`;
+tanSquare28.style.top = `375px`;
+tanSquare29.style.left = `62.5px`;
+tanSquare29.style.top = `437.5px`;
+tanSquare30.style.left = `187.5px`;
+tanSquare30.style.top = `437.5px`;
+tanSquare31.style.left = `312.5px`;
+tanSquare31.style.top = `437.5px`;
+tanSquare32.style.left = `437.5px`;
+tanSquare32.style.top = `437.5px`;
+brownSquare1.style.left = `62.5px`;
+brownSquare2.style.left = `${62.5 + 125}px`;
+brownSquare3.style.left = `${62.5 + 250}px`;
+brownSquare4.style.left = `${62.5 + 375}px`;
+brownSquare5.style.top = `62.5px`;
+brownSquare6.style.left = `${62.5 + 62.5}px`;
+brownSquare6.style.top = `62.5px`;
+brownSquare7.style.left = `${62.5 + 187.5}px`;
+brownSquare7.style.top = `62.5px`;
+brownSquare8.style.left = `${62.5 + 312.5}px`;
+brownSquare8.style.top = `62.5px`;
+brownSquare9.style.left = `62.5px`;
+brownSquare9.style.top = `125px`;
+brownSquare10.style.left = `${62.5 + 125}px`;
+brownSquare10.style.top = `125px`;
+brownSquare11.style.left = `${62.5 + 250}px`;
+brownSquare11.style.top = `125px`;
+brownSquare12.style.left = `${62.5 + 375}px`;
+brownSquare12.style.top = `125px`;
+brownSquare13.style.top = `187.5px`;
+brownSquare14.style.left = `${62.5 + 62.5}px`;
+brownSquare14.style.top = `187.5px`;
+brownSquare15.style.left = `${62.5 + 187.5}px`;
+brownSquare15.style.top = `187.5px`;
+brownSquare16.style.left = `${62.5 + 312.5}px`;
+brownSquare16.style.top = `187.5px`;
+brownSquare17.style.left = `62.5px`;
+brownSquare17.style.top = `250px`;
+brownSquare18.style.left = `${62.5 + 125}px`;
+brownSquare18.style.top = `250px`;
+brownSquare19.style.left = `${62.5 + 250}px`;
+brownSquare19.style.top = `250px`;
+brownSquare20.style.left = `${62.5 + 375}px`;
+brownSquare20.style.top = `250px`;
+brownSquare21.style.top = `312.5px`;
+brownSquare22.style.left = `${62.5 + 62.5}px`;
+brownSquare22.style.top = `312.5px`;
+brownSquare23.style.left = `${62.5 + 187.5}px`;
+brownSquare23.style.top = `312.5px`;
+brownSquare24.style.left = `${62.5 + 312.5}px`;
+brownSquare24.style.top = `312.5px`;
+brownSquare25.style.left = `62.5px`;
+brownSquare25.style.top = `375px`;
+brownSquare26.style.left = `${62.5 + 125}px`;
+brownSquare26.style.top = `375px`;
+brownSquare27.style.left = `${62.5 + 250}px`;
+brownSquare27.style.top = `375px`;
+brownSquare28.style.left = `${62.5 + 375}px`;
+brownSquare28.style.top = `375px`;
+brownSquare29.style.top = `437.5px`;
+brownSquare30.style.left = `${62.5 + 62.5}px`;
+brownSquare30.style.top = `437.5px`;
+brownSquare31.style.left = `${62.5 + 187.5}px`;
+brownSquare31.style.top = `437.5px`;
+brownSquare32.style.left = `${62.5 + 312.5}px`;
+brownSquare32.style.top = `437.5px`;
 
 let checkerboard = document.getElementById("checkerboard");
 let player1TurnText = document.getElementById("player1TurnText");
@@ -557,7 +542,7 @@ this.blackKing.height = 60;
 function drawGame() {
     //blackPawn1
     tanSquare25.appendChild(blackPawn1);
-    
+
     //blackPawn2
     brownSquare25.appendChild(blackPawn2);
 
@@ -730,7 +715,7 @@ function randomOpponentMove() {
         var child = document.getElementById(piece.child);
             black.parentElement.removeChild(black);
             child.children[0].style.position = "unset";
-            checkerboard.insertBefore(child.children[0], codeDiv);
+            codeDiv.appendChild(child.children[0]);
             child.appendChild(black);
             moveWhite = true;
         turn = 2;
@@ -768,8 +753,8 @@ function randomOpponentMove() {
                     }
                     });
     if (turn == 1) {
-        player1TurnText.style.left = `${canvas.getBoundingClientRect().left + 10 + 40}px`;
-        player1TurnText.style.top = `${canvas.getBoundingClientRect().top + 10 + 215}px`;
+        player1TurnText.style.left = `40px`;
+        player1TurnText.style.top = `215px`;
         player1TurnText.style.display = "unset";
         clickBlack = false;
         setTimeout(function() {
@@ -826,7 +811,7 @@ function moveBlackPawn1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -838,7 +823,7 @@ function moveBlackPawn1(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false && tanSquare25.contains(blackPawn1)) {
@@ -850,10 +835,10 @@ function moveBlackPawn1(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -899,7 +884,7 @@ function moveBlackPawn2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -911,7 +896,7 @@ function moveBlackPawn2(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false && brownSquare25.contains(blackPawn2)) {
@@ -923,10 +908,10 @@ function moveBlackPawn2(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -972,7 +957,7 @@ function moveBlackPawn3(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn3.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -984,7 +969,7 @@ function moveBlackPawn3(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn3.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === false && tanSquare26.contains(blackPawn3)) {
@@ -995,10 +980,10 @@ function moveBlackPawn3(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1044,7 +1029,7 @@ function moveBlackPawn4(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1056,7 +1041,7 @@ function moveBlackPawn4(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false && brownSquare26.contains(blackPawn4)) {
@@ -1068,10 +1053,10 @@ function moveBlackPawn4(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1117,7 +1102,7 @@ function moveBlackPawn5(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1129,7 +1114,7 @@ function moveBlackPawn5(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false && tanSquare27.contains(blackPawn5)) {
@@ -1141,10 +1126,10 @@ function moveBlackPawn5(event) {
     }
 }
 //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1190,7 +1175,7 @@ function moveBlackPawn6(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn6.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1202,7 +1187,7 @@ function moveBlackPawn6(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn6.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === false && brownSquare27.contains(blackPawn6)) {
@@ -1213,10 +1198,10 @@ function moveBlackPawn6(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1262,7 +1247,7 @@ function moveBlackPawn7(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn7.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1274,7 +1259,7 @@ function moveBlackPawn7(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn7.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === false && tanSquare28.contains(blackPawn7)) {
@@ -1285,10 +1270,10 @@ function moveBlackPawn7(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1334,7 +1319,7 @@ function moveBlackPawn8(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn8.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1346,7 +1331,7 @@ function moveBlackPawn8(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn8.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === false && brownSquare28.contains(blackPawn8)) {
@@ -1357,10 +1342,10 @@ function moveBlackPawn8(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+|| child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1456,7 +1441,7 @@ function moveBlackRook1(event) {
     }
     children.forEach(function(child) {
         //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1469,7 +1454,7 @@ function moveBlackRook1(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1481,7 +1466,7 @@ Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1494,7 +1479,7 @@ Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1506,7 +1491,7 @@ Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2))
 && child.style.top == blackRook1.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1519,7 +1504,7 @@ Number(Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1531,7 +1516,7 @@ Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2))
     && child.style.top == blackRook1.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -1544,7 +1529,7 @@ Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1590,10 +1575,10 @@ function moveBlackKnight1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
-    && child.style.left == `${Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125}px`
+    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1612,9 +1597,9 @@ function moveBlackKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -1634,10 +1619,10 @@ function moveBlackKnight1(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-    && child.style.left == `${Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5}px`
+    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1717,25 +1702,25 @@ function moveBlackBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -1745,25 +1730,25 @@ function moveBlackBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -1771,9 +1756,9 @@ function moveBlackBishop1(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))).toFixed(3) ||
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))).toFixed(3)) {
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length) - 2)) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1785,9 +1770,9 @@ function moveBlackBishop1(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -1837,25 +1822,25 @@ function moveBlackQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
@@ -1887,25 +1872,25 @@ function moveBlackQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
@@ -1935,9 +1920,9 @@ function moveBlackQueen(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1949,9 +1934,9 @@ function moveBlackQueen(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -1962,7 +1947,7 @@ function moveBlackQueen(event) {
         }
     }
     //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -1975,7 +1960,7 @@ function moveBlackQueen(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -1987,7 +1972,7 @@ Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2000,7 +1985,7 @@ Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2012,7 +1997,7 @@ Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2025,7 +2010,7 @@ Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2037,7 +2022,7 @@ Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == blackQueen.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -2050,7 +2035,7 @@ Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2096,7 +2081,7 @@ function moveBlackKing(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpaceUp
-        if (child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackKing.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2108,7 +2093,7 @@ function moveBlackKing(event) {
     }
 }
 //oneSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackKing.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2120,7 +2105,7 @@ if (child.children.length > 0 && child.style.top == `${Number(Number(blackKing.p
     }
 }
 //oneSpaceLeft
-if (child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == blackKing.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2132,7 +2117,7 @@ if (child.style.left == `${Number(Number(blackKing.parentElement.style.left.slic
     }
 }
 //oneSpaceLeftHit
-if (child.children.length > 0 && child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == blackKing.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2192,10 +2177,10 @@ if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentE
     }
 }
 //diagonalSpaceUp
-if (child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+|| child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("black", {
@@ -2206,10 +2191,10 @@ if (child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(
     }
 }
 //diagonalSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+|| child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2223,7 +2208,7 @@ if (child.children.length > 0 && child.style.top == `${Number(Number(blackKing.p
 if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("black", {
@@ -2237,7 +2222,7 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2287,25 +2272,25 @@ function moveBlackBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -2315,25 +2300,25 @@ function moveBlackBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -2341,9 +2326,9 @@ function moveBlackBishop2(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2355,9 +2340,9 @@ function moveBlackBishop2(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -2401,10 +2386,10 @@ function moveBlackKnight2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
-    && child.style.left == `${Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125}px`
+    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2423,9 +2408,9 @@ function moveBlackKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -2445,10 +2430,10 @@ function moveBlackKnight2(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-    && child.style.left == `${Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5}px`
+    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2470,7 +2455,7 @@ function moveBlackKnight2(event) {
     if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2572,7 +2557,7 @@ function moveBlackRook2(event) {
     }
     children.forEach(function(child) {
         //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2585,7 +2570,7 @@ function moveBlackRook2(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2597,7 +2582,7 @@ Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2610,7 +2595,7 @@ Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)).toFixed(3))
+Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2622,7 +2607,7 @@ Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2))
 && child.style.top == blackRook2.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2635,7 +2620,7 @@ Number(Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2647,7 +2632,7 @@ Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2))
     && child.style.top == blackRook2.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -2660,7 +2645,7 @@ Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2)).toFixed(3))
+Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === false) {
@@ -2676,8 +2661,8 @@ Number(Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElem
 }
 
     if (turn == 2) {
-        player2TurnText.style.left = `${canvas.getBoundingClientRect().left + 10 + 40}px`;
-        player2TurnText.style.top = `${canvas.getBoundingClientRect().top + 10 + 215}px`;
+        player2TurnText.style.left = `40px`;
+        player2TurnText.style.top = `215px`;
         player2TurnText.style.display = "unset";
         clickWhite = false;
         setTimeout(function() {
@@ -2734,7 +2719,7 @@ function moveWhitePawn1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2746,7 +2731,7 @@ function moveWhitePawn1(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare5.contains(whitePawn1)) {
@@ -2759,10 +2744,10 @@ function moveWhitePawn1(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5).toFixed(3)}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5).toFixed(3)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2808,7 +2793,7 @@ function moveWhitePawn2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2820,7 +2805,7 @@ function moveWhitePawn2(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare5.contains(whitePawn2)) {
@@ -2832,10 +2817,10 @@ function moveWhitePawn2(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5).toFixed(3)}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5).toFixed(3)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2881,7 +2866,7 @@ function moveWhitePawn3(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn3.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2893,7 +2878,7 @@ function moveWhitePawn3(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn3.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare6.contains(whitePawn3)) {
@@ -2904,10 +2889,10 @@ function moveWhitePawn3(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5).toFixed(1)}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
-&& child.style.left == `${Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5).toFixed(1)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -2953,7 +2938,7 @@ function moveWhitePawn4(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -2965,7 +2950,7 @@ function moveWhitePawn4(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare6.contains(whitePawn4)) {
@@ -2977,9 +2962,9 @@ function moveWhitePawn4(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
@@ -3026,7 +3011,7 @@ function moveWhitePawn5(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3038,7 +3023,7 @@ function moveWhitePawn5(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare7.contains(whitePawn5)) {
@@ -3050,9 +3035,9 @@ function moveWhitePawn5(event) {
     }
 }
 //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
@@ -3099,7 +3084,7 @@ function moveWhitePawn6(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn6.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3111,7 +3096,7 @@ function moveWhitePawn6(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn6.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare7.contains(whitePawn6)) {
@@ -3122,9 +3107,9 @@ function moveWhitePawn6(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+|| child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
@@ -3171,7 +3156,7 @@ function moveWhitePawn7(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn7.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3183,7 +3168,7 @@ function moveWhitePawn7(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn7.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && brownSquare8.contains(whitePawn7)) {
@@ -3194,9 +3179,9 @@ function moveWhitePawn7(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.children.length > 0 && child.style.top == `${Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    || child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) - 62.5}px`
     && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
@@ -3243,7 +3228,7 @@ function moveWhitePawn8(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+        if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn8.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3255,7 +3240,7 @@ function moveWhitePawn8(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn8.parentElement.style.left)
     if (child.id == event.target.id) {
         if (moveWhite === true && tanSquare8.contains(whitePawn8)) {
@@ -3266,9 +3251,9 @@ function moveWhitePawn8(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    if (child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.children.length > 0 && child.style.top == `${Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(3)}px`
+    || child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) - 62.5}px`
     && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id) {
@@ -3365,7 +3350,7 @@ function moveWhiteRook1(event) {
     }
     children.forEach(function(child) {
         //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3378,7 +3363,7 @@ function moveWhiteRook1(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3390,7 +3375,7 @@ Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3403,7 +3388,7 @@ Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3415,7 +3400,7 @@ Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3428,7 +3413,7 @@ Number(Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3440,7 +3425,7 @@ Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteRook1.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -3453,7 +3438,7 @@ Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3499,10 +3484,10 @@ function moveWhiteKnight1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
-    && child.style.left == `${Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125}px`
+    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3521,9 +3506,9 @@ function moveWhiteKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -3543,10 +3528,10 @@ function moveWhiteKnight1(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-    && child.style.left == `${Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5}px`
+    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3568,7 +3553,7 @@ function moveWhiteKnight1(event) {
     if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3626,25 +3611,25 @@ function moveWhiteBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -3654,25 +3639,25 @@ function moveWhiteBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -3680,9 +3665,9 @@ function moveWhiteBishop1(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3694,9 +3679,9 @@ function moveWhiteBishop1(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3746,25 +3731,25 @@ function moveWhiteQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left && child.children.length > 0 &&
@@ -3796,25 +3781,25 @@ function moveWhiteQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.style.left == whiteQueen.parentElement.style.left && child.children.length > 0 &&
@@ -3844,9 +3829,9 @@ function moveWhiteQueen(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3858,9 +3843,9 @@ function moveWhiteQueen(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3871,7 +3856,7 @@ function moveWhiteQueen(event) {
         }
     }
     //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3884,7 +3869,7 @@ function moveWhiteQueen(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3896,7 +3881,7 @@ Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3909,7 +3894,7 @@ Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3921,7 +3906,7 @@ Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3934,7 +3919,7 @@ Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -3946,7 +3931,7 @@ Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteQueen.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -3959,7 +3944,7 @@ Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4005,7 +3990,7 @@ function moveWhiteKing(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpaceUp
-        if (child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+        if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == whiteKing.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -4017,7 +4002,7 @@ function moveWhiteKing(event) {
     }
 }
 //oneSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == whiteKing.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4029,7 +4014,7 @@ if (child.children.length > 0 && child.style.top == `${Number(Number(whiteKing.p
     }
 }
 //oneSpaceLeft
-if (child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == whiteKing.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -4041,7 +4026,7 @@ if (child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slic
     }
 }
 //oneSpaceLeftHit
-if (child.children.length > 0 && child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == whiteKing.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4101,10 +4086,10 @@ if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentE
     }
 }
 //diagonalSpaceUp
-if (child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+|| child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("white", {
@@ -4115,10 +4100,10 @@ if (child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(
     }
 }
 //diagonalSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.children.length > 0 && child.style.top == `${Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-&& child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+|| child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4132,7 +4117,7 @@ if (child.children.length > 0 && child.style.top == `${Number(Number(whiteKing.p
 if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("white", {
@@ -4146,7 +4131,7 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
             socket.emit("whiteHit", {
@@ -4196,25 +4181,25 @@ function moveWhiteBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -4224,25 +4209,25 @@ function moveWhiteBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)).toFixed(3)) ||
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
             && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
             && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)).toFixed(3))) {
+            == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
@@ -4250,9 +4235,9 @@ function moveWhiteBishop2(event) {
     children.forEach(function(child) {
     //Diagonal
     if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4264,9 +4249,9 @@ function moveWhiteBishop2(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3)) ||
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
     child.children.length > 0 && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)).toFixed(3))) {
+    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -4310,10 +4295,10 @@ function moveWhiteKnight2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
+    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2) - 125).toFixed(3))}px`
-    && child.style.left == `${Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2) - 62.5).toFixed(3))}px`) {
+    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125}px`
+    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4332,9 +4317,9 @@ function moveWhiteKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(3)}px`
+    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -4354,10 +4339,10 @@ function moveWhiteKnight2(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
+    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2) - 62.5).toFixed(3))}px`
-    && child.style.left == `${Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5}px`
+    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4379,7 +4364,7 @@ function moveWhiteKnight2(event) {
     if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2) - 125).toFixed(3))}px`) {
+    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4481,7 +4466,7 @@ function moveWhiteRook2(event) {
     }
     children.forEach(function(child) {
         //Up
-        if (child.style.top.slice(0, child.style.top.length - 2) < Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)).toFixed(3))
+        if (child.style.top.slice(0, child.style.top.length - 2) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -4494,7 +4479,7 @@ function moveWhiteRook2(event) {
 }
 //upHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
-Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4506,7 +4491,7 @@ Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentEleme
     }
 }
     //Down
-    if (child.style.top.slice(0, child.style.top.length - 2) > Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)).toFixed(3))
+    if (child.style.top.slice(0, child.style.top.length - 2) > Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -4519,7 +4504,7 @@ Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentEleme
 }
 //downHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
-Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)).toFixed(3))
+Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4531,7 +4516,7 @@ Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentEleme
     }
 }
     //Left
-    if (child.style.left.slice(0, child.style.left.length - 2) > Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) > Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -4544,7 +4529,7 @@ Number(Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentEleme
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
-Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
@@ -4556,7 +4541,7 @@ Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElem
     }
 }
     //Right
-    if (child.style.left.slice(0, child.style.left.length - 2) < Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2)).toFixed(3))
+    if (child.style.left.slice(0, child.style.left.length - 2) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteRook2.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -4569,7 +4554,7 @@ Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElem
     }
     //rightHit
 if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
-Number(Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2)).toFixed(3))
+Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top) {
     if (child.children[0].id == event.target.id) {
         if (moveWhite === true) {
