@@ -1376,7 +1376,7 @@ function clickBlackRook1() {
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackRook1);
+    checkerboard.addEventListener("click", moveBlackRook1);
 }
 
 function moveBlackRook1(event) {
@@ -1686,7 +1686,7 @@ function clickBlackBishop1() {
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackBishop1);
+    checkerboard.addEventListener("click", moveBlackBishop1);
 }
 
 function moveBlackBishop1(event) {
@@ -1808,7 +1808,7 @@ function clickBlackQueen() {
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackQueen);
+    checkerboard.addEventListener("click", moveBlackQueen);
 }
 
 function moveBlackQueen(event) {
@@ -2258,7 +2258,7 @@ function clickBlackBishop2() {
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackBishop2);
+    checkerboard.addEventListener("click", moveBlackBishop2);
 }
 
 function moveBlackBishop2(event) {
@@ -2502,7 +2502,7 @@ function clickBlackRook2() {
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackRook2);
+    checkerboard.addEventListener("click", moveBlackRook2);
 }
 
 function moveBlackRook2(event) {
@@ -3294,7 +3294,7 @@ function clickWhiteRook1() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteRook1);
+    checkerboard.addEventListener("click", moveWhiteRook1);
 }
 
 function moveWhiteRook1(event) {
@@ -3604,7 +3604,7 @@ function clickWhiteBishop1() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteBishop1);
+    checkerboard.addEventListener("click", moveWhiteBishop1);
 }
 
 function moveWhiteBishop1(event) {
@@ -3724,7 +3724,7 @@ function clickWhiteQueen() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteQueen);
+    checkerboard.addEventListener("click", moveWhiteQueen);
 }
 
 function moveWhiteQueen(event) {
@@ -3988,7 +3988,7 @@ function clickWhiteKing() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteKing);
+    checkerboard.addEventListener("click", moveWhiteKing);
 }
 
 function moveWhiteKing(event) {
@@ -4174,7 +4174,7 @@ function clickWhiteBishop2() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteBishop2);
+    checkerboard.addEventListener("click", moveWhiteBishop2);
 }
 
 function moveWhiteBishop2(event) {
@@ -4418,7 +4418,7 @@ function clickWhiteRook2() {
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteRook2);
+    checkerboard.addEventListener("click", moveWhiteRook2);
 }
 
 function moveWhiteRook2(event) {
