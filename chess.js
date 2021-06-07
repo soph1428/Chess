@@ -1769,10 +1769,10 @@ function moveBlackBishop1(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    child.children.length > 0 && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    child.children.length > 0 && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.children[0].id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
