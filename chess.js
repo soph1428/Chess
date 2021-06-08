@@ -683,7 +683,7 @@ socket.on("started game", () => {
     start.style.display = "none";
     entertext.style.display = "none";
     randomOpponentMove();
-    document.removeEventListener("keypress", startKeyPress);
+    document.removeEventListener("Number(keypress", startKeyPress);
 });
 });
 
@@ -1388,15 +1388,15 @@ function moveBlackRook1(event) {
     for (var child of children) {
         if (event.target.id.includes("white")) {
         if (child.children.length > 0 &&
-        event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-        && child.style.top.slice(0, child.style.top.length - 2) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
+        event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+        && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
         && child.style.left == blackRook1.parentElement.style.left && child.id != blackRook1.parentElement.id
-        && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2) ||
+        && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)) ||
         child.children.length > 0 &&
-        event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-        && child.style.top.slice(0, child.style.top.length - 2) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
+        event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+        && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
         && child.style.left == blackRook1.parentElement.style.left && child.id != blackRook1.parentElement.id
-        && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2) ||
+        && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)) ||
         child.children.length > 0 &&
         Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
         && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
@@ -1412,15 +1412,15 @@ function moveBlackRook1(event) {
     }
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
         if (child.children.length > 0 &&
-            event.target.style.top.slice(0, event.target.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-            && child.style.top.slice(0, child.style.top.length - 2) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
+            Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
             && child.style.left == blackRook1.parentElement.style.left && child.id != blackRook1.parentElement.id
-            && event.target.style.top.slice(0, event.target.style.top.length - 2) < blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2) ||
+            && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
-            event.target.style.top.slice(0, event.target.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-            && child.style.top.slice(0, child.style.top.length - 2) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
+            Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)
             && child.style.left == blackRook1.parentElement.style.left && child.id != blackRook1.parentElement.id
-            && event.target.style.top.slice(0, event.target.style.top.length - 2) > blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2) ||
+            && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
             Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
@@ -1449,7 +1449,7 @@ function moveBlackRook1(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -1474,7 +1474,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -1499,7 +1499,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -1524,7 +1524,7 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -1698,56 +1698,56 @@ function moveBlackBishop1(event) {
     for (var child of children) {
         if (event.target.id.includes("white")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
@@ -1755,10 +1755,10 @@ function moveBlackBishop1(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length) - 2)) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
+    Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1770,10 +1770,10 @@ function moveBlackBishop1(event) {
     }
     //diagonalHit
     if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))
+    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))
     && child.children[0].id.includes("white") || child.children.length > 0 &&
     Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2) - Number(child.style.top.slice(0, child.style.top.length - 2)))
+    == Number(Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))
     && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === false) {
@@ -1820,41 +1820,41 @@ function moveBlackQueen(event) {
     for (var child of children) {
         if (event.target.id.includes("white")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
-                event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-                && child.style.top.slice(0, child.style.top.length - 2) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
+                event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
                 && child.style.left == blackQueen.parentElement.style.left && child.id != blackQueen.parentElement.id
-                && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) ||
+                && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
                 event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
-                event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-                && child.style.top.slice(0, child.style.top.length - 2) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
+                event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
                 && child.style.left == blackQueen.parentElement.style.left && child.id != blackQueen.parentElement.id
-                && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) ||
+                && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
                 event.target.style.top == blackQueen.parentElement.style.top && child.children.length > 0 &&
                 Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
@@ -1869,42 +1869,42 @@ function moveBlackQueen(event) {
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
-                event.target.style.top.slice(0, event.target.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-                && child.style.top.slice(0, child.style.top.length - 2) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
+                Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
                 && child.style.left == blackQueen.parentElement.style.left && child.id != blackQueen.parentElement.id
-                && event.target.style.top.slice(0, event.target.style.top.length - 2) < blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) ||
+                && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
                 event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
-                event.target.style.top.slice(0, event.target.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-                && child.style.top.slice(0, child.style.top.length - 2) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
+                Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)
                 && child.style.left == blackQueen.parentElement.style.left && child.id != blackQueen.parentElement.id
-                && event.target.style.top.slice(0, event.target.style.top.length - 2) > blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) ||
+                && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
                 event.target.style.top == blackQueen.parentElement.style.top && child.children.length > 0 &&
                 Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
@@ -1921,10 +1921,10 @@ function moveBlackQueen(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -1935,10 +1935,10 @@ function moveBlackQueen(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
-    child.children.length > 0 && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
+    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("white") ||
+    child.children.length > 0 && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -1961,7 +1961,7 @@ function moveBlackQueen(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -1986,7 +1986,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2011,7 +2011,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2036,7 +2036,7 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2271,56 +2271,56 @@ function moveBlackBishop2(event) {
     for (var child of children) {
         if (event.target.id.includes("white")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != blackBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
@@ -2328,10 +2328,10 @@ function moveBlackBishop2(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("black", {
@@ -2342,10 +2342,10 @@ function moveBlackBishop2(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
-    child.children.length > 0 && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
+    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("white") ||
+    child.children.length > 0 && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === false) {
                 socket.emit("blackHit", {
@@ -2517,15 +2517,15 @@ function moveBlackRook2(event) {
     for (var child of children) {
         if (event.target.id.includes("white")) {
         if (child.children.length > 0 &&
-        event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-        && child.style.top.slice(0, child.style.top.length - 2) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
+        event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+        && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
         && child.style.left == blackRook2.parentElement.style.left && child.id != blackRook2.parentElement.id
-        && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2) ||
+        && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)) ||
         child.children.length > 0 &&
-        event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-        && child.style.top.slice(0, child.style.top.length - 2) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
+        event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+        && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
         && child.style.left == blackRook2.parentElement.style.left && child.id != blackRook2.parentElement.id
-        && event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2) ||
+        && event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) > Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)) ||
         child.children.length > 0 &&
         Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
         && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
@@ -2541,15 +2541,15 @@ function moveBlackRook2(event) {
     }
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
         if (child.children.length > 0 &&
-            event.target.style.top.slice(0, event.target.style.top.length - 2) < child.style.top.slice(0, child.style.top.length - 2)
-            && child.style.top.slice(0, child.style.top.length - 2) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
+            Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
             && child.style.left == blackRook2.parentElement.style.left && child.id != blackRook2.parentElement.id
-            && event.target.style.top.slice(0, event.target.style.top.length - 2) < blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2) ||
+            && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
-            event.target.style.top.slice(0, event.target.style.top.length - 2) > child.style.top.slice(0, child.style.top.length - 2)
-            && child.style.top.slice(0, child.style.top.length - 2) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
+            Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)
             && child.style.left == blackRook2.parentElement.style.left && child.id != blackRook2.parentElement.id
-            && event.target.style.top.slice(0, event.target.style.top.length - 2) > blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2) ||
+            && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
             Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) > Number(child.style.left.slice(0, child.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
@@ -2578,7 +2578,7 @@ function moveBlackRook2(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2603,7 +2603,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2628,7 +2628,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -2653,7 +2653,7 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("white") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3334,12 +3334,12 @@ function moveWhiteRook1(event) {
             if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
                 if (child.children.length > 0 &&
                     Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
-                    && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
+                    && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
                     && child.style.left == whiteRook1.parentElement.style.left && child.id != whiteRook1.parentElement.id
                     && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)) ||
                     child.children.length > 0 &&
                     Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
-                    && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
+                    && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
                     && child.style.left == whiteRook1.parentElement.style.left && child.id != whiteRook1.parentElement.id
                     && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2)) ||
                     child.children.length > 0 &&
@@ -3370,7 +3370,7 @@ function moveWhiteRook1(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3395,7 +3395,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3420,7 +3420,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3445,7 +3445,7 @@ Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3619,56 +3619,56 @@ function moveWhiteBishop1(event) {
     for (var child of children) {
         if (event.target.id.includes("black")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop1.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
@@ -3676,10 +3676,10 @@ function moveWhiteBishop1(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3690,10 +3690,10 @@ function moveWhiteBishop1(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
+    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black") ||
+    child.children.length > 0 && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3739,28 +3739,28 @@ function moveWhiteQueen(event) {
     for (var child of children) {
         if (event.target.id.includes("black")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
@@ -3788,40 +3788,40 @@ function moveWhiteQueen(event) {
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteQueen.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
-            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
             if (child.children.length > 0 &&
                 Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
-                && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
                 && child.style.left == whiteQueen.parentElement.style.left && child.id != whiteQueen.parentElement.id
                 && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
                 child.children.length > 0 &&
                 Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
-                && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
+                && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
                 && child.style.left == whiteQueen.parentElement.style.left && child.id != whiteQueen.parentElement.id
                 && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
                 child.children.length > 0 &&
@@ -3840,10 +3840,10 @@ function moveWhiteQueen(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3854,10 +3854,10 @@ function moveWhiteQueen(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
+    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black") ||
+    child.children.length > 0 && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -3880,7 +3880,7 @@ function moveWhiteQueen(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3905,7 +3905,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3930,7 +3930,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -3955,7 +3955,7 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -4190,56 +4190,56 @@ function moveWhiteBishop2(event) {
     for (var child of children) {
         if (event.target.id.includes("black")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.parentElement.style.top.slice(0, Number(event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-            == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+            == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.style.left.slice(0, event.target.style.left.length - 2)
-            && child.style.left.slice(0, child.style.left.length - 2) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < event.target.style.top.slice(0, event.target.style.top.length - 2) && child.id != whiteBishop2.parentElement.id
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
-            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
+            && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
+            && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2) - whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
@@ -4247,10 +4247,10 @@ function moveWhiteBishop2(event) {
     }
     children.forEach(function(child) {
     //Diagonal
-    if (child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2))) {
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) ||
+    Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)))) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -4261,10 +4261,10 @@ function moveWhiteBishop2(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && child.style.left.slice(0, child.style.left.length - 2) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - child.style.left.slice(0, child.style.left.length - 2)
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2) - child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
+    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black") ||
+    child.children.length > 0 && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
+    == Number(Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("whiteHit", {
@@ -4461,12 +4461,12 @@ function moveWhiteRook2(event) {
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
         if (child.children.length > 0 &&
             Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
-            && child.style.top.slice(0, child.style.top.length - 2) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
             && child.style.left == whiteRook2.parentElement.style.left && child.id != whiteRook2.parentElement.id
             && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
             Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(child.style.top.slice(0, child.style.top.length - 2))
-            && child.style.top.slice(0, child.style.top.length - 2) > Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
             && child.style.left == whiteRook2.parentElement.style.left && child.id != whiteRook2.parentElement.id
             && Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) > Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 &&
@@ -4497,7 +4497,7 @@ function moveWhiteRook2(event) {
     }
 }
 //upHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) <
 Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -4522,7 +4522,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
     }
 }
 //downHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.top.slice(0, child.style.top.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.top.slice(0, child.style.top.length - 2)) >
 Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -4547,7 +4547,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
     }
 }
 //leftHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) <
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
@@ -4572,7 +4572,7 @@ Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.sty
         }
     }
     //rightHit
-if (child.children.length > 0 && child.children[0].id.includes("black") && child.style.left.slice(0, child.style.left.length - 2) >
+if (child.children.length > 0 && child.children[0].id.includes("black") && Number(child.style.left.slice(0, child.style.left.length - 2)) >
 Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
