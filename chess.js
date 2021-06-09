@@ -10,6 +10,8 @@ var gameCode = Math.random().toString(36).substring(7);
 var gameInput = document.getElementById("gameinput");
 var direction1 = document.getElementById("direction1");
 var codeDiv = document.getElementById("codediv");
+var whiteBase = document.getElementById("whiteBase");
+var blackBase = document.getElementById("blackBase");
 
 setInterval(function() {
 codeText.innerHTML = "Code: " + gameCode;
@@ -98,8 +100,11 @@ var brownSquare32 = document.getElementById("brownSquare32");
 tanSquare1.style.left = "0px";
 tanSquare1.style.top = "0px";
 tanSquare2.style.left = `125px`;
+tanSquare2.style.top = "0px";
 tanSquare3.style.left = `250px`;
+tanSquare3.style.top = "0px";
 tanSquare4.style.left = `375px`;
+tanSquare4.style.top = "0px";
 tanSquare5.style.left = `62.5px`;
 tanSquare5.style.top = `62.5px`;
 tanSquare6.style.left = `187.5px`;
@@ -713,7 +718,7 @@ function randomOpponentMove() {
         var child = document.getElementById(piece.child);
             black.parentElement.removeChild(black);
             child.children[0].style.position = "unset";
-            codeDiv.appendChild(child.children[0]);
+            blackBase.appendChild(child.children[0]);
             child.appendChild(black);
             moveWhite = true;
         turn = 2;
@@ -741,7 +746,7 @@ function randomOpponentMove() {
                 var child = document.getElementById(piece.child);
                     white.parentElement.removeChild(white);
                     child.children[0].style.position = "unset";
-                    document.body.insertBefore(child.children[0], checkerboard);
+                    whiteBase.appendChild(child.children[0]);
                     child.appendChild(white);
                     moveWhite = false;
                 turn = 1;
@@ -1386,7 +1391,7 @@ function moveBlackRook1(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("white")) {
+        if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
         if (child.children.length > 0 &&
         Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
         && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
@@ -1696,7 +1701,7 @@ function moveBlackBishop1(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("white")) {
+        if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
@@ -1801,7 +1806,6 @@ function clickBlackQueen() {
     document.removeEventListener("click", moveBlackKnight1);
     checkerboard.removeEventListener("click", moveBlackBishop1);
     blackQueen.parentElement.removeEventListener("click", clickBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
     checkerboard.removeEventListener("click", moveBlackBishop2);
     document.removeEventListener("click", moveBlackKnight2);
     checkerboard.removeEventListener("click", moveBlackRook2);
@@ -1818,7 +1822,11 @@ function moveBlackQueen(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("white")) {
+        if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
+            if (event.target.parentElement.style.left != blackQueen.parentElement.style.left
+                && event.target.parentElement.style.top != blackQueen.parentElement.style.top
+                || event.target.style.left != blackQueen.parentElement.style.left
+                && event.target.style.top != blackQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
@@ -1845,6 +1853,11 @@ function moveBlackQueen(event) {
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
+        }
+        if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
+            || event.target.parentElement.style.top == blackQueen.parentElement.style.top
+            || event.target.style.left == blackQueen.parentElement.style.left
+            || event.target.style.top == blackQueen.parentElement.style.top) {
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
                 Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
                 && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
@@ -1868,7 +1881,12 @@ function moveBlackQueen(event) {
                 return console.log(child.id);
             }
         }
+        }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
+            if (event.target.parentElement.style.left != blackQueen.parentElement.style.left
+                && event.target.parentElement.style.top != blackQueen.parentElement.style.top
+                || event.target.style.left != blackQueen.parentElement.style.left
+                && event.target.style.top != blackQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
@@ -1895,6 +1913,11 @@ function moveBlackQueen(event) {
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
+        }
+        if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
+            || event.target.parentElement.style.top == blackQueen.parentElement.style.top
+            || event.target.style.left == blackQueen.parentElement.style.left
+            || event.target.style.top == blackQueen.parentElement.style.top) {
             if (event.target.style.left == blackQueen.parentElement.style.left && child.children.length > 0 &&
                 Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
                 && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
@@ -1917,6 +1940,7 @@ function moveBlackQueen(event) {
                 && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))) {
                 return console.log(child.id);
             }
+        }
         }
     }
     children.forEach(function(child) {
@@ -1999,7 +2023,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     }
 }
     //Left
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === false) {
@@ -2012,8 +2036,8 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
 }
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
-Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-&& child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
+Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) && child.style.top == blackQueen.parentElement.style.top) {
+    console.log(child.id, event.target.id)
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite === false) {
             socket.emit("blackHit", {
@@ -2024,7 +2048,7 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
     }
 }
     //Right
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == blackQueen.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === false) {
@@ -2269,7 +2293,7 @@ function moveBlackBishop2(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("white")) {
+        if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
@@ -2515,7 +2539,7 @@ function moveBlackRook2(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("white")) {
+        if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
         if (child.children.length > 0 &&
         Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
         && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
@@ -3307,7 +3331,7 @@ function moveWhiteRook1(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("black")) {
+        if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
             if (child.children.length > 0 &&
                 Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
                 && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
@@ -3518,7 +3542,7 @@ function moveWhiteKnight1(event) {
     if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
+    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
                 socket.emit("white", {
@@ -3617,7 +3641,7 @@ function moveWhiteBishop1(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("black")) {
+        if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
@@ -3737,7 +3761,11 @@ function moveWhiteQueen(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("black")) {
+        if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
+            if (event.target.parentElement.style.left != whiteQueen.parentElement.style.left
+                && event.target.parentElement.style.top != whiteQueen.parentElement.style.top
+                || event.target.style.left != whiteQueen.parentElement.style.left
+                && event.target.style.top != whiteQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
@@ -3764,6 +3792,11 @@ function moveWhiteQueen(event) {
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
+        }
+        if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
+            || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
+            || event.target.style.left == whiteQueen.parentElement.style.left
+            || event.target.style.top == whiteQueen.parentElement.style.top) {
             if (child.children.length > 0 &&
                 Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
                 && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
@@ -3787,7 +3820,12 @@ function moveWhiteQueen(event) {
                 return console.log(child.id);
             }
         }
+        }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
+            if (event.target.parentElement.style.left != whiteQueen.parentElement.style.left
+                && event.target.parentElement.style.top != whiteQueen.parentElement.style.top
+                || event.target.style.left != whiteQueen.parentElement.style.left
+                && event.target.style.top != whiteQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
@@ -3814,6 +3852,11 @@ function moveWhiteQueen(event) {
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
+        }
+        if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
+            || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
+            || event.target.style.left == whiteQueen.parentElement.style.left
+            || event.target.style.top == whiteQueen.parentElement.style.top) {
             if (child.children.length > 0 &&
                 Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
                 && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
@@ -3836,6 +3879,7 @@ function moveWhiteQueen(event) {
                 && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))) {
                 return console.log(child.id);
             }
+        }
         }
     }
     children.forEach(function(child) {
@@ -3918,7 +3962,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
     }
 }
     //Left
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top) {
     if (child.id == event.target.id) {
         if (moveWhite === true) {
@@ -3943,7 +3987,7 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
     }
 }
     //Right
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
+    if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteQueen.parentElement.style.top) {
         if (child.id == event.target.id) {
             if (moveWhite === true) {
@@ -4188,7 +4232,7 @@ function moveWhiteBishop2(event) {
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("black")) {
+        if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
@@ -4429,12 +4473,13 @@ function clickWhiteRook2() {
 
 function moveWhiteRook2(event) {
     if (clickWhite) {
+        console.log("clicked white rook 2");
     if (whiteRook2.parentElement.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
-        if (event.target.id.includes("black")) {
+        if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
         if (child.children.length > 0 &&
         Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) < Number(child.style.top.slice(0, child.style.top.length - 2))
         && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
