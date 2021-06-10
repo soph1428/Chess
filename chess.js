@@ -716,9 +716,11 @@ function randomOpponentMove() {
                 whiteSocket = false;
             var black = document.getElementById(piece.black);
         var child = document.getElementById(piece.child);
+        var pieceCaptured = child.children[0];
             black.parentElement.removeChild(black);
-            child.children[0].style.position = "unset";
-            blackBase.appendChild(child.children[0]);
+            pieceCaptured.parentElement.removeChild(pieceCaptured);
+            blackBase.appendChild(pieceCaptured);
+            pieceCaptured.style.position = "unset";
             child.appendChild(black);
             moveWhite = true;
         turn = 2;
@@ -744,9 +746,11 @@ function randomOpponentMove() {
                         blackSocket = false;
                     var white = document.getElementById(piece.white);
                 var child = document.getElementById(piece.child);
+                var pieceCaptured = child.children[0];
                     white.parentElement.removeChild(white);
-                    child.children[0].style.position = "unset";
-                    whiteBase.appendChild(child.children[0]);
+                    pieceCaptured.parentElement.removeChild(pieceCaptured);
+                    whiteBase.appendChild(pieceCaptured);
+                    pieceCaptured.style.position = "unset";
                     child.appendChild(white);
                     moveWhite = false;
                 turn = 1;
@@ -761,52 +765,37 @@ function randomOpponentMove() {
         setTimeout(function() {
             player1TurnText.style.display = "none";
             if (black) {
-                blackPawn1.parentElement.addEventListener("click", clickBlackPawn1);
-                blackPawn2.parentElement.addEventListener("click", clickBlackPawn2);
-                blackPawn3.parentElement.addEventListener("click", clickBlackPawn3);
-                blackPawn4.parentElement.addEventListener("click", clickBlackPawn4);
-                blackPawn5.parentElement.addEventListener("click", clickBlackPawn5);
-                blackPawn6.parentElement.addEventListener("click", clickBlackPawn6);
-                blackPawn7.parentElement.addEventListener("click", clickBlackPawn7);
-                blackPawn8.parentElement.addEventListener("click", clickBlackPawn8);
-                blackRook1.parentElement.addEventListener("click", clickBlackRook1);
-                blackKnight1.parentElement.addEventListener("click", clickBlackKnight1);
-                blackBishop1.parentElement.addEventListener("click", clickBlackBishop1);
-                blackQueen.parentElement.addEventListener("click", clickBlackQueen);
-                blackKing.parentElement.addEventListener("click", clickBlackKing);
-                blackBishop2.parentElement.addEventListener("click", clickBlackBishop2);
-                blackKnight2.parentElement.addEventListener("click", clickBlackKnight2);
-                blackRook2.parentElement.addEventListener("click", clickBlackRook2);
+                blackPawn1.addEventListener("click", clickBlackPawn1);
+                blackPawn2.addEventListener("click", clickBlackPawn2);
+                blackPawn3.addEventListener("click", clickBlackPawn3);
+                blackPawn4.addEventListener("click", clickBlackPawn4);
+                blackPawn5.addEventListener("click", clickBlackPawn5);
+                blackPawn6.addEventListener("click", clickBlackPawn6);
+                blackPawn7.addEventListener("click", clickBlackPawn7);
+                blackPawn8.addEventListener("click", clickBlackPawn8);
+                blackRook1.addEventListener("click", clickBlackRook1);
+                blackKnight1.addEventListener("click", clickBlackKnight1);
+                blackBishop1.addEventListener("click", clickBlackBishop1);
+                blackQueen.addEventListener("click", clickBlackQueen);
+                blackKing.addEventListener("click", clickBlackKing);
+                blackBishop2.addEventListener("click", clickBlackBishop2);
+                blackKnight2.addEventListener("click", clickBlackKnight2);
+                blackRook2.addEventListener("click", clickBlackRook2);
             }
         }, 2000);
     }
 
 function clickBlackPawn1() {
-    blackPawn1.parentElement.removeEventListener("click", clickBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn1;
 }
 
 function moveBlackPawn1(event) {
     if (clickBlack) {
-    if (blackPawn1.parentElement.contains(event.target)) {
+    if (blackPawn1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -814,7 +803,7 @@ function moveBlackPawn1(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn1.id,
@@ -826,7 +815,7 @@ function moveBlackPawn1(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && tanSquare25.contains(blackPawn1)) {
             socket.emit("black", {
                 "black": blackPawn1.id,
@@ -837,7 +826,7 @@ function moveBlackPawn1(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -855,31 +844,16 @@ function moveBlackPawn1(event) {
 }
 
 function clickBlackPawn2() {
-    document.removeEventListener("click", moveBlackPawn1);
-    blackPawn2.parentElement.removeEventListener("click", clickBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn2;
 }
 
 function moveBlackPawn2(event) {
     if (clickBlack) {
-    if (blackPawn2.parentElement.contains(event.target)) {
+    if (blackPawn2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -887,7 +861,7 @@ function moveBlackPawn2(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn2.id,
@@ -899,7 +873,7 @@ function moveBlackPawn2(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && brownSquare25.contains(blackPawn2)) {
             socket.emit("black", {
                 "black": blackPawn2.id,
@@ -910,7 +884,7 @@ function moveBlackPawn2(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -928,31 +902,16 @@ function moveBlackPawn2(event) {
 }
 
 function clickBlackPawn3() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    blackPawn3.parentElement.removeEventListener("click", clickBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn3);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn3;
 }
 
 function moveBlackPawn3(event) {
     if (clickBlack) {
-    if (blackPawn3.parentElement.contains(event.target)) {
+    if (blackPawn3.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -960,7 +919,7 @@ function moveBlackPawn3(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn3.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn3.id,
@@ -972,7 +931,7 @@ function moveBlackPawn3(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn3.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && tanSquare26.contains(blackPawn3)) {
             socket.emit("black", {
                 "black": blackPawn3.id,
@@ -982,7 +941,7 @@ function moveBlackPawn3(event) {
     }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1000,31 +959,16 @@ function moveBlackPawn3(event) {
 }
 
 function clickBlackPawn4() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    blackPawn4.parentElement.removeEventListener("click", clickBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn4);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn4;
 }
 
 function moveBlackPawn4(event) {
     if (clickBlack) {
-    if (blackPawn4.parentElement.contains(event.target)) {
+    if (blackPawn4.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1032,7 +976,7 @@ function moveBlackPawn4(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn4.id,
@@ -1044,7 +988,7 @@ function moveBlackPawn4(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && brownSquare26.contains(blackPawn4)) {
             socket.emit("black", {
                 "black": blackPawn4.id,
@@ -1055,7 +999,7 @@ function moveBlackPawn4(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1073,31 +1017,16 @@ function moveBlackPawn4(event) {
 }
 
 function clickBlackPawn5() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    blackPawn5.parentElement.removeEventListener("click", clickBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn5);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn5;
 }
 
 function moveBlackPawn5(event) {
     if (clickBlack) {
-    if (blackPawn5.parentElement.contains(event.target)) {
+    if (blackPawn5.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1105,7 +1034,7 @@ function moveBlackPawn5(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn5.id,
@@ -1117,7 +1046,7 @@ function moveBlackPawn5(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && tanSquare27.contains(blackPawn5)) {
             socket.emit("black", {
                 "black": blackPawn5.id,
@@ -1128,7 +1057,7 @@ function moveBlackPawn5(event) {
 }
 //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1146,31 +1075,16 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentE
 }
 
 function clickBlackPawn6() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    blackPawn6.parentElement.removeEventListener("click", clickBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn6);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn6;
 }
 
 function moveBlackPawn6(event) {
     if (clickBlack) {
-    if (blackPawn6.parentElement.contains(event.target)) {
+    if (blackPawn6.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1178,7 +1092,7 @@ function moveBlackPawn6(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn6.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn6.id,
@@ -1190,7 +1104,7 @@ function moveBlackPawn6(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn6.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && brownSquare27.contains(blackPawn6)) {
             socket.emit("black", {
                 "black": blackPawn6.id,
@@ -1200,7 +1114,7 @@ function moveBlackPawn6(event) {
     }
     //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1218,31 +1132,16 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentE
 }
 
 function clickBlackPawn7() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    blackPawn7.parentElement.removeEventListener("click", clickBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn7);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn7;
 }
 
 function moveBlackPawn7(event) {
     if (clickBlack) {
-    if (blackPawn7.parentElement.contains(event.target)) {
+    if (blackPawn7.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1250,7 +1149,7 @@ function moveBlackPawn7(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn7.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn7.id,
@@ -1262,7 +1161,7 @@ function moveBlackPawn7(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn7.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && tanSquare28.contains(blackPawn7)) {
             socket.emit("black", {
                 "black": blackPawn7.id,
@@ -1272,7 +1171,7 @@ function moveBlackPawn7(event) {
     }
     //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1290,31 +1189,16 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentE
 }
 
 function clickBlackPawn8() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    blackPawn8.parentElement.removeEventListener("click", clickBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackPawn8);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackPawn8;
 }
 
 function moveBlackPawn8(event) {
     if (clickBlack) {
-    if (blackPawn8.parentElement.contains(event.target)) {
+    if (blackPawn8.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1322,7 +1206,7 @@ function moveBlackPawn8(event) {
         //oneSpace
         if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackPawn8.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackPawn8.id,
@@ -1334,7 +1218,7 @@ function moveBlackPawn8(event) {
     //twoSpace
     if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 125}px`
 && child.style.left == blackPawn8.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false && brownSquare28.contains(blackPawn8)) {
             socket.emit("black", {
                 "black": blackPawn8.id,
@@ -1344,7 +1228,7 @@ function moveBlackPawn8(event) {
     }
     //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
 || child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("white")) {
@@ -1362,31 +1246,16 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentE
 }
 
 function clickBlackRook1() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    blackRook1.parentElement.removeEventListener("click", clickBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackRook1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackRook1;
 }
 
 function moveBlackRook1(event) {
     if (clickBlack) {
-    if (blackRook1.parentElement.contains(event.target)) {
+    if (blackRook1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1444,7 +1313,7 @@ function moveBlackRook1(event) {
         //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook1.id,
@@ -1469,7 +1338,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook1.id,
@@ -1494,7 +1363,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2))
 && child.style.top == blackRook1.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook1.id,
@@ -1519,7 +1388,7 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.slice.length - 2))
     && child.style.top == blackRook1.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                     "black": blackRook1.id,
@@ -1546,31 +1415,16 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
 }
 
 function clickBlackKnight1() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    blackKnight1.parentElement.removeEventListener("click", clickBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackKnight1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackKnight1;
 }
 
 function moveBlackKnight1(event) {
     if (clickBlack) {
-    if (blackKnight1.parentElement.contains(event.target)) {
+    if (blackKnight1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -1580,7 +1434,7 @@ function moveBlackKnight1(event) {
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
@@ -1603,7 +1457,7 @@ function moveBlackKnight1(event) {
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
@@ -1626,7 +1480,7 @@ function moveBlackKnight1(event) {
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
@@ -1649,7 +1503,7 @@ function moveBlackKnight1(event) {
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
@@ -1672,55 +1526,40 @@ function moveBlackKnight1(event) {
 }
 
 function clickBlackBishop1() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    blackBishop1.parentElement.removeEventListener("click", clickBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackBishop1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackBishop1;
 }
 
 function moveBlackBishop1(event) {
     if (clickBlack) {
-    if (blackBishop1.parentElement.contains(event.target)) {
+    if (blackBishop1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop1.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
@@ -1764,7 +1603,7 @@ function moveBlackBishop1(event) {
     == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackBishop1.id,
@@ -1794,66 +1633,47 @@ function moveBlackBishop1(event) {
 }
 
 function clickBlackQueen() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    blackQueen.parentElement.removeEventListener("click", clickBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackQueen);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackQueen;
 }
 
 function moveBlackQueen(event) {
     if (clickBlack) {
-    if (blackQueen.parentElement.contains(event.target)) {
+    if (blackQueen.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
-            if (event.target.parentElement.style.left != blackQueen.parentElement.style.left
-                && event.target.parentElement.style.top != blackQueen.parentElement.style.top
-                || event.target.style.left != blackQueen.parentElement.style.left
-                && event.target.style.top != blackQueen.parentElement.style.top) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
-        }
         if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
             || event.target.parentElement.style.top == blackQueen.parentElement.style.top
             || event.target.style.left == blackQueen.parentElement.style.left
@@ -1883,36 +1703,31 @@ function moveBlackQueen(event) {
         }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (event.target.parentElement.style.left != blackQueen.parentElement.style.left
-                && event.target.parentElement.style.top != blackQueen.parentElement.style.top
-                || event.target.style.left != blackQueen.parentElement.style.left
-                && event.target.style.top != blackQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
-            }
         }
         if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
             || event.target.parentElement.style.top == blackQueen.parentElement.style.top
@@ -1949,7 +1764,7 @@ function moveBlackQueen(event) {
     == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackQueen.id,
@@ -1975,7 +1790,7 @@ function moveBlackQueen(event) {
     //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackQueen.id,
@@ -2000,7 +1815,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackQueen.id,
@@ -2025,7 +1840,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackQueen.id,
@@ -2050,7 +1865,7 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == blackQueen.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackQueen.id,
@@ -2077,31 +1892,16 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
 }
 
 function clickBlackKing() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    blackKing.parentElement.removeEventListener("click", clickBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackKing);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackKing;
 }
 
 function moveBlackKing(event) {
     if (clickBlack) {
-    if (blackKing.parentElement.contains(event.target)) {
+    if (blackKing.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2109,7 +1909,7 @@ function moveBlackKing(event) {
         //oneSpaceUp
         if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == blackKing.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2133,7 +1933,7 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
 //oneSpaceLeft
 if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == blackKing.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2157,7 +1957,7 @@ if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentE
 //oneSpaceDown
 if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == blackKing.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2181,7 +1981,7 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
 //oneSpaceRight
 if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
 && child.style.top == blackKing.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2207,7 +2007,7 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2235,7 +2035,7 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackKing.id,
@@ -2264,58 +2064,43 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
 }
 
 function clickBlackBishop2() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    blackBishop2.parentElement.removeEventListener("click", clickBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackBishop2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackBishop2;
 }
 
 function moveBlackBishop2(event) {
     if (clickBlack) {
-    if (blackBishop2.parentElement.contains(event.target)) {
+    if (blackBishop2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("white") || event.target.children.length > 0 && event.target.children[0].id.includes("white")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
@@ -2325,25 +2110,25 @@ function moveBlackBishop2(event) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != blackBishop2.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
@@ -2356,7 +2141,7 @@ function moveBlackBishop2(event) {
     == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackBishop2.id,
@@ -2384,31 +2169,16 @@ function moveBlackBishop2(event) {
 }
 
 function clickBlackKnight2() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    blackKnight2.parentElement.removeEventListener("click", clickBlackKnight2);
-    checkerboard.removeEventListener("click", moveBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    document.addEventListener("click", moveBlackKnight2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackKnight2;
 }
 
 function moveBlackKnight2(event) {
     if (clickBlack) {
-    if (blackKnight2.parentElement.contains(event.target)) {
+    if (blackKnight2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2418,7 +2188,7 @@ function moveBlackKnight2(event) {
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
@@ -2441,7 +2211,7 @@ function moveBlackKnight2(event) {
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
@@ -2464,7 +2234,7 @@ function moveBlackKnight2(event) {
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
@@ -2487,7 +2257,7 @@ function moveBlackKnight2(event) {
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
@@ -2510,31 +2280,16 @@ function moveBlackKnight2(event) {
 }
 
 function clickBlackRook2() {
-    document.removeEventListener("click", moveBlackPawn1);
-    document.removeEventListener("click", moveBlackPawn2);
-    document.removeEventListener("click", moveBlackPawn3);
-    document.removeEventListener("click", moveBlackPawn4);
-    document.removeEventListener("click", moveBlackPawn5);
-    document.removeEventListener("click", moveBlackPawn6);
-    document.removeEventListener("click", moveBlackPawn7);
-    document.removeEventListener("click", moveBlackPawn8);
-    checkerboard.removeEventListener("click", moveBlackRook1);
-    document.removeEventListener("click", moveBlackKnight1);
-    checkerboard.removeEventListener("click", moveBlackBishop1);
-    checkerboard.removeEventListener("click", moveBlackQueen);
-    checkerboard.removeEventListener("click", moveBlackKing);
-    checkerboard.removeEventListener("click", moveBlackBishop2);
-    document.removeEventListener("click", moveBlackKnight2);
-    blackRook2.parentElement.removeEventListener("click", clickBlackRook2);
     clickBlack = true;
     blackMove = true;
     blackSocket = true;
-    checkerboard.addEventListener("click", moveBlackRook2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveBlackRook2;
 }
 
 function moveBlackRook2(event) {
     if (clickBlack) {
-    if (blackRook2.parentElement.contains(event.target)) {
+    if (blackRook2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2592,7 +2347,7 @@ function moveBlackRook2(event) {
         //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook2.id,
@@ -2617,7 +2372,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook2.id,
@@ -2642,7 +2397,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2))
 && child.style.top == blackRook2.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === false) {
             socket.emit("black", {
                 "black": blackRook2.id,
@@ -2667,7 +2422,7 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.slice.length - 2))
     && child.style.top == blackRook2.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === false) {
                 socket.emit("black", {
                 "black": blackRook2.id,
@@ -2701,52 +2456,37 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
         setTimeout(function() {
             player2TurnText.style.display = "none";
             if (white) {
-                whitePawn1.parentElement.addEventListener("click", clickWhitePawn1);
-                whitePawn2.parentElement.addEventListener("click", clickWhitePawn2);
-                whitePawn3.parentElement.addEventListener("click", clickWhitePawn3);
-                whitePawn4.parentElement.addEventListener("click", clickWhitePawn4);
-                whitePawn5.parentElement.addEventListener("click", clickWhitePawn5);
-                whitePawn6.parentElement.addEventListener("click", clickWhitePawn6);
-                whitePawn7.parentElement.addEventListener("click", clickWhitePawn7);
-                whitePawn8.parentElement.addEventListener("click", clickWhitePawn8);
-                whiteRook1.parentElement.addEventListener("click", clickWhiteRook1);
-                whiteKnight1.parentElement.addEventListener("click", clickWhiteKnight1);
-                whiteBishop1.parentElement.addEventListener("click", clickWhiteBishop1);
-                whiteQueen.parentElement.addEventListener("click", clickWhiteQueen);
-                whiteKing.parentElement.addEventListener("click", clickWhiteKing);
-                whiteBishop2.parentElement.addEventListener("click", clickWhiteBishop2);
-                whiteKnight2.parentElement.addEventListener("click", clickWhiteKnight2);
-                whiteRook2.parentElement.addEventListener("click", clickWhiteRook2);
+                whitePawn1.addEventListener("click", clickWhitePawn1);
+                whitePawn2.addEventListener("click", clickWhitePawn2);
+                whitePawn3.addEventListener("click", clickWhitePawn3);
+                whitePawn4.addEventListener("click", clickWhitePawn4);
+                whitePawn5.addEventListener("click", clickWhitePawn5);
+                whitePawn6.addEventListener("click", clickWhitePawn6);
+                whitePawn7.addEventListener("click", clickWhitePawn7);
+                whitePawn8.addEventListener("click", clickWhitePawn8);
+                whiteRook1.addEventListener("click", clickWhiteRook1);
+                whiteKnight1.addEventListener("click", clickWhiteKnight1);
+                whiteBishop1.addEventListener("click", clickWhiteBishop1);
+                whiteQueen.addEventListener("click", clickWhiteQueen);
+                whiteKing.addEventListener("click", clickWhiteKing);
+                whiteBishop2.addEventListener("click", clickWhiteBishop2);
+                whiteKnight2.addEventListener("click", clickWhiteKnight2);
+                whiteRook2.addEventListener("click", clickWhiteRook2);
             }
         }, 2000);
     }
 
 function clickWhitePawn1() {
-    whitePawn1.parentElement.removeEventListener("click", clickWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn1;
 }
 
 function moveWhitePawn1(event) {
     if (clickWhite) {
-    if (whitePawn1.parentElement.contains(event.target)) {
+    if (whitePawn1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2754,7 +2494,7 @@ function moveWhitePawn1(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn1.id,
@@ -2766,7 +2506,7 @@ function moveWhitePawn1(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && brownSquare5.contains(whitePawn1)) {
             socket.emit("white", {
                 "white": whitePawn1.id,
@@ -2777,7 +2517,7 @@ function moveWhitePawn1(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -2795,31 +2535,16 @@ function moveWhitePawn1(event) {
 }
 
 function clickWhitePawn2() {
-    document.removeEventListener("click", moveWhitePawn1);
-    whitePawn2.parentElement.removeEventListener("click", clickWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn2;
 }
 
 function moveWhitePawn2(event) {
     if (clickWhite) {
-    if (whitePawn2.parentElement.contains(event.target)) {
+    if (whitePawn2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2827,7 +2552,7 @@ function moveWhitePawn2(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn2.id,
@@ -2839,7 +2564,7 @@ function moveWhitePawn2(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && tanSquare5.contains(whitePawn2)) {
             socket.emit("white", {
                 "white": whitePawn2.id,
@@ -2850,7 +2575,7 @@ function moveWhitePawn2(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -2868,31 +2593,16 @@ function moveWhitePawn2(event) {
 }
 
 function clickWhitePawn3() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    whitePawn3.parentElement.removeEventListener("click", clickWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn3);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn3;
 }
 
 function moveWhitePawn3(event) {
     if (clickWhite) {
-    if (whitePawn3.parentElement.contains(event.target)) {
+    if (whitePawn3.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2900,7 +2610,7 @@ function moveWhitePawn3(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn3.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn3.id,
@@ -2912,7 +2622,7 @@ function moveWhitePawn3(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn3.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && brownSquare6.contains(whitePawn3)) {
             socket.emit("white", {
                 "white": whitePawn3.id,
@@ -2922,7 +2632,7 @@ function moveWhitePawn3(event) {
     }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -2940,31 +2650,16 @@ function moveWhitePawn3(event) {
 }
 
 function clickWhitePawn4() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    whitePawn4.parentElement.removeEventListener("click", clickWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn4);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn4;
 }
 
 function moveWhitePawn4(event) {
     if (clickWhite) {
-    if (whitePawn4.parentElement.contains(event.target)) {
+    if (whitePawn4.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -2972,7 +2667,7 @@ function moveWhitePawn4(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn4.id,
@@ -2984,7 +2679,7 @@ function moveWhitePawn4(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && tanSquare6.contains(whitePawn4)) {
             socket.emit("white", {
                 "white": whitePawn4.id,
@@ -2995,7 +2690,7 @@ function moveWhitePawn4(event) {
 }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -3013,31 +2708,16 @@ function moveWhitePawn4(event) {
 }
 
 function clickWhitePawn5() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    whitePawn5.parentElement.removeEventListener("click", clickWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn5);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn5;
 }
 
 function moveWhitePawn5(event) {
     if (clickWhite) {
-    if (whitePawn5.parentElement.contains(event.target)) {
+    if (whitePawn5.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3045,7 +2725,7 @@ function moveWhitePawn5(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn5.id,
@@ -3057,7 +2737,7 @@ function moveWhitePawn5(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && brownSquare7.contains(whitePawn5)) {
             socket.emit("white", {
                 "white": whitePawn5.id,
@@ -3068,7 +2748,7 @@ function moveWhitePawn5(event) {
 }
 //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -3086,31 +2766,16 @@ if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentE
 }
 
 function clickWhitePawn6() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    whitePawn6.parentElement.removeEventListener("click", clickWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn6);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn6;
 }
 
 function moveWhitePawn6(event) {
     if (clickWhite) {
-    if (whitePawn6.parentElement.contains(event.target)) {
+    if (whitePawn6.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3118,7 +2783,7 @@ function moveWhitePawn6(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn6.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn6.id,
@@ -3130,7 +2795,7 @@ function moveWhitePawn6(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn6.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && tanSquare7.contains(whitePawn6)) {
             socket.emit("white", {
                 "white": whitePawn6.id,
@@ -3140,7 +2805,7 @@ function moveWhitePawn6(event) {
     }
     //diagonalSpace
 if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5}px`
+&& child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
 || child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) - 62.5}px`
 && child.children[0].id.includes("black")) {
@@ -3158,31 +2823,16 @@ if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentE
 }
 
 function clickWhitePawn7() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    whitePawn7.parentElement.removeEventListener("click", clickWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn7);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn7;
 }
 
 function moveWhitePawn7(event) {
     if (clickWhite) {
-    if (whitePawn7.parentElement.contains(event.target)) {
+    if (whitePawn7.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3190,7 +2840,7 @@ function moveWhitePawn7(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn7.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn7.id,
@@ -3202,7 +2852,7 @@ function moveWhitePawn7(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn7.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && brownSquare8.contains(whitePawn7)) {
             socket.emit("white", {
                 "white": whitePawn7.id,
@@ -3212,7 +2862,7 @@ function moveWhitePawn7(event) {
     }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px`
+    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
     || child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) - 62.5}px`
     && child.children[0].id.includes("black")) {
@@ -3230,31 +2880,16 @@ function moveWhitePawn7(event) {
 }
 
 function clickWhitePawn8() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    whitePawn8.parentElement.removeEventListener("click", clickWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhitePawn8);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhitePawn8;
 }
 
 function moveWhitePawn8(event) {
     if (clickWhite) {
-    if (whitePawn8.parentElement.contains(event.target)) {
+    if (whitePawn8.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3262,7 +2897,7 @@ function moveWhitePawn8(event) {
         //oneSpace
         if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whitePawn8.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whitePawn8.id,
@@ -3274,7 +2909,7 @@ function moveWhitePawn8(event) {
     //twoSpace
     if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125}px`
 && child.style.left == whitePawn8.parentElement.style.left)
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true && tanSquare8.contains(whitePawn8)) {
             socket.emit("white", {
                 "white": whitePawn8.id,
@@ -3284,7 +2919,7 @@ function moveWhitePawn8(event) {
     }
     //diagonalSpace
     if (child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px`
+    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
     || child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) - 62.5}px`
     && child.children[0].id.includes("black")) {
@@ -3302,31 +2937,16 @@ function moveWhitePawn8(event) {
 }
 
 function clickWhiteRook1() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    whiteRook1.parentElement.removeEventListener("click", clickWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteRook1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteRook1;
 }
 
 function moveWhiteRook1(event) {
     if (clickWhite) {
-    if (whiteRook1.parentElement.contains(event.target)) {
+    if (whiteRook1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3384,7 +3004,7 @@ function moveWhiteRook1(event) {
         //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook1.id,
@@ -3409,7 +3029,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.style.top.length - 2))
 && child.style.left == whiteRook1.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook1.id,
@@ -3434,7 +3054,7 @@ Number(whiteRook1.parentElement.style.top.slice(0, whiteRook1.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteRook1.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook1.id,
@@ -3459,7 +3079,7 @@ Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteRook1.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteRook1.id,
@@ -3486,31 +3106,16 @@ Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.sty
 }
 
 function clickWhiteKnight1() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    whiteKnight1.parentElement.removeEventListener("click", clickWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteKnight1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteKnight1;
 }
 
 function moveWhiteKnight1(event) {
     if (clickWhite) {
-    if (whiteKnight1.parentElement.contains(event.target)) {
+    if (whiteKnight1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -3520,7 +3125,7 @@ function moveWhiteKnight1(event) {
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight1.id,
@@ -3543,7 +3148,7 @@ function moveWhiteKnight1(event) {
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight1.id,
@@ -3566,7 +3171,7 @@ function moveWhiteKnight1(event) {
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight1.id,
@@ -3589,7 +3194,7 @@ function moveWhiteKnight1(event) {
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight1.id,
@@ -3612,58 +3217,43 @@ function moveWhiteKnight1(event) {
 }
 
 function clickWhiteBishop1() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    whiteBishop1.parentElement.removeEventListener("click", clickWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteBishop1);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteBishop1;
 }
 
 function moveWhiteBishop1(event) {
     if (clickWhite) {
-    if (whiteBishop1.parentElement.contains(event.target)) {
+    if (whiteBishop1.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
@@ -3673,25 +3263,25 @@ function moveWhiteBishop1(event) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteBishop1.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
@@ -3704,7 +3294,7 @@ function moveWhiteBishop1(event) {
     == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteBishop1.id,
@@ -3732,67 +3322,47 @@ function moveWhiteBishop1(event) {
 }
 
 function clickWhiteQueen() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    whiteQueen.parentElement.removeEventListener("click", clickWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteQueen);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteQueen;
 }
 
 function moveWhiteQueen(event) {
     if (clickWhite) {
-    if (whiteQueen.parentElement.contains(event.target)) {
+    if (whiteQueen.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
-            if (event.target.parentElement.style.left != whiteQueen.parentElement.style.left
-                && event.target.parentElement.style.top != whiteQueen.parentElement.style.top
-                || event.target.style.left != whiteQueen.parentElement.style.left
-                && event.target.style.top != whiteQueen.parentElement.style.top) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
-        }
         if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
             || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
             || event.target.style.left == whiteQueen.parentElement.style.left
@@ -3822,37 +3392,32 @@ function moveWhiteQueen(event) {
         }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
-            if (event.target.parentElement.style.left != whiteQueen.parentElement.style.left
-                && event.target.parentElement.style.top != whiteQueen.parentElement.style.top
-                || event.target.style.left != whiteQueen.parentElement.style.left
-                && event.target.style.top != whiteQueen.parentElement.style.top) {
             if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) ||
             child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.style.left.slice(0, event.target.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.style.top.slice(0, event.target.style.top.length - 2)) && child.id != whiteQueen.parentElement.id
-            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) && child.id.includes("tan")
+            && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
                 return console.log(child.id);
             }
-        }
         if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
             || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
             || event.target.style.left == whiteQueen.parentElement.style.left
@@ -3888,7 +3453,7 @@ function moveWhiteQueen(event) {
     == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteQueen.id,
@@ -3914,7 +3479,7 @@ function moveWhiteQueen(event) {
     //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteQueen.id,
@@ -3939,7 +3504,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
 && child.style.left == whiteQueen.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteQueen.id,
@@ -3964,7 +3529,7 @@ Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteQueen.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteQueen.id,
@@ -3989,7 +3554,7 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteQueen.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteQueen.id,
@@ -4016,31 +3581,16 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
 }
 
 function clickWhiteKing() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    whiteKing.parentElement.removeEventListener("click", clickWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteKing);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteKing;
 }
 
 function moveWhiteKing(event) {
     if (clickWhite) {
-    if (whiteKing.parentElement.contains(event.target)) {
+    if (whiteKing.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -4048,7 +3598,7 @@ function moveWhiteKing(event) {
         //oneSpaceUp
         if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == whiteKing.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4072,7 +3622,7 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
 //oneSpaceLeft
 if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
 && child.style.top == whiteKing.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4096,7 +3646,7 @@ if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentE
 //oneSpaceDown
 if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == whiteKing.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4120,7 +3670,7 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
 //oneSpaceRight
 if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
 && child.style.top == whiteKing.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4146,7 +3696,7 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4174,7 +3724,7 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
 || child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteKing.id,
@@ -4203,55 +3753,40 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
 }
 
 function clickWhiteBishop2() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    whiteBishop2.parentElement.removeEventListener("click", clickWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteBishop2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteBishop2;
 }
 
 function moveWhiteBishop2(event) {
     if (clickWhite) {
-    if (whiteBishop2.parentElement.contains(event.target)) {
+    if (whiteBishop2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
     for (var child of children) {
         if (event.target.id.includes("black") || event.target.children.length > 0 && event.target.children[0].id.includes("black")) {
-            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) ||
-            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)
+            child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2))
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
             && Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(event.target.parentElement.style.top.slice(0, event.target.parentElement.style.top.length - 2)) && child.id != whiteBishop2.parentElement.id
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
@@ -4295,7 +3830,7 @@ function moveWhiteBishop2(event) {
     == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
     Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
     == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteBishop2.id,
@@ -4323,31 +3858,16 @@ function moveWhiteBishop2(event) {
 }
 
 function clickWhiteKnight2() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    whiteKnight2.parentElement.removeEventListener("click", clickWhiteKnight2);
-    checkerboard.removeEventListener("click", moveWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    document.addEventListener("click", moveWhiteKnight2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteKnight2;
 }
 
 function moveWhiteKnight2(event) {
     if (clickWhite) {
-    if (whiteKnight2.parentElement.contains(event.target)) {
+    if (whiteKnight2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -4357,7 +3877,7 @@ function moveWhiteKnight2(event) {
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight2.id,
@@ -4380,7 +3900,7 @@ function moveWhiteKnight2(event) {
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
     || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight2.id,
@@ -4403,7 +3923,7 @@ function moveWhiteKnight2(event) {
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight2.id,
@@ -4426,7 +3946,7 @@ function moveWhiteKnight2(event) {
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
     || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5}px`
     && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteKnight2.id,
@@ -4449,32 +3969,16 @@ function moveWhiteKnight2(event) {
 }
 
 function clickWhiteRook2() {
-    document.removeEventListener("click", moveWhitePawn1);
-    document.removeEventListener("click", moveWhitePawn2);
-    document.removeEventListener("click", moveWhitePawn3);
-    document.removeEventListener("click", moveWhitePawn4);
-    document.removeEventListener("click", moveWhitePawn5);
-    document.removeEventListener("click", moveWhitePawn6);
-    document.removeEventListener("click", moveWhitePawn7);
-    document.removeEventListener("click", moveWhitePawn8);
-    checkerboard.removeEventListener("click", moveWhiteRook1);
-    document.removeEventListener("click", moveWhiteKnight1);
-    checkerboard.removeEventListener("click", moveWhiteBishop1);
-    checkerboard.removeEventListener("click", moveWhiteQueen);
-    checkerboard.removeEventListener("click", moveWhiteKing);
-    checkerboard.removeEventListener("click", moveWhiteBishop2);
-    document.removeEventListener("click", moveWhiteKnight2);
-    whiteRook2.parentElement.removeEventListener("click", clickWhiteRook2);
     clickWhite = true;
     whiteMove = true;
     whiteSocket = true;
-    checkerboard.addEventListener("click", moveWhiteRook2);
+    checkerboard.removeAttribute("onclick");
+    checkerboard.onclick = moveWhiteRook2;
 }
 
 function moveWhiteRook2(event) {
     if (clickWhite) {
-        console.log("clicked white rook 2");
-    if (whiteRook2.parentElement.contains(event.target)) {
+    if (whiteRook2.contains(event.target)) {
         return;
     }
     var children = Array.from(checkerboard.children);
@@ -4532,7 +4036,7 @@ function moveWhiteRook2(event) {
         //Up
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook2.id,
@@ -4557,7 +4061,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
     //Down
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.style.top.length - 2))
 && child.style.left == whiteRook2.parentElement.style.left) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook2.id,
@@ -4582,7 +4086,7 @@ Number(whiteRook2.parentElement.style.top.slice(0, whiteRook2.parentElement.styl
     //Left
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2))
 && child.style.top == whiteRook2.parentElement.style.top) {
-    if (child.id == event.target.id) {
+    if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite === true) {
             socket.emit("white", {
                 "white": whiteRook2.id,
@@ -4607,7 +4111,7 @@ Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.sty
     //Right
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.slice.length - 2))
     && child.style.top == whiteRook2.parentElement.style.top) {
-        if (child.id == event.target.id) {
+        if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite === true) {
                 socket.emit("white", {
                     "white": whiteRook2.id,
