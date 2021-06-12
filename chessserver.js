@@ -48,6 +48,9 @@ io.on("connection", (socket) => {
                 socket.on("whiteWinner", () => {
                     io.to(input).emit("whiteWinnerBoth");
                 });
+                socket.on("undoWhiteMove", () => {
+                    io.to(input).emit("undoWhiteMoveBoth");
+                });
                 socket.on("disconnect", () => {
                     delete rooms[input][socket.id];
                     socket.leave(game);
@@ -64,6 +67,9 @@ io.on("connection", (socket) => {
         });
         socket.on("blackWinner", () => {
             io.to(game).emit("blackWinnerBoth");
+        });
+        socket.on("undoBlackMove", () => {
+            io.to(game).emit("undoBlackMoveBoth");
         });
         socket.on("start game", () => {
             io.to(game).emit("started game");

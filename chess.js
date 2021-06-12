@@ -688,7 +688,6 @@ socket.on("started game", () => {
     start.style.display = "none";
     entertext.style.display = "none";
     randomOpponentMove();
-    document.removeEventListener("Number(keypress", startKeyPress);
 });
 });
 
