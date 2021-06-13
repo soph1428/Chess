@@ -606,54 +606,6 @@ let winner = setInterval(function() {
     }
 }, 0);
 
-//whitePawn1
-brownSquare5.appendChild(whitePawn1);
-    
-//whitePawn2
-tanSquare5.appendChild(whitePawn2);
-
-//whitePawn3
-brownSquare6.appendChild(whitePawn3);
-
-//whitePawn4
-tanSquare6.appendChild(whitePawn4);
-
-//whitePawn5
-brownSquare7.appendChild(whitePawn5);
-
-//whitePawn6
-tanSquare7.appendChild(whitePawn6);
-
-//whitePawn7
-brownSquare8.appendChild(whitePawn7);
-
-//whitePawn8
-tanSquare8.appendChild(whitePawn8);
-
-//whiteRook1
-tanSquare1.appendChild(whiteRook1);
-
-//whiteRook2
-brownSquare4.appendChild(whiteRook2);
-
-//whiteKnight1
-brownSquare1.appendChild(whiteKnight1);
-
-//whiteKnight2
-tanSquare4.appendChild(whiteKnight2);
-
-//whiteBishop1
-tanSquare2.appendChild(whiteBishop1);
-
-//whiteBishop2
-brownSquare3.appendChild(whiteBishop2);
-
-//whiteKing
-brownSquare2.appendChild(whiteKing);
-
-//whiteQueen
-tanSquare3.appendChild(whiteQueen);
-
 socket.on("whiteWinnerBoth", () => {
     alert("White wins!");
     document.location.reload();
