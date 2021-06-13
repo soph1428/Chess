@@ -768,22 +768,22 @@ function randomOpponentMove() {
         setTimeout(function() {
             player1TurnText.style.display = "none";
             if (black) {
-                blackPawn1.addEventListener("click", clickBlackPawn1);
-                blackPawn2.addEventListener("click", clickBlackPawn2);
-                blackPawn3.addEventListener("click", clickBlackPawn3);
-                blackPawn4.addEventListener("click", clickBlackPawn4);
-                blackPawn5.addEventListener("click", clickBlackPawn5);
-                blackPawn6.addEventListener("click", clickBlackPawn6);
-                blackPawn7.addEventListener("click", clickBlackPawn7);
-                blackPawn8.addEventListener("click", clickBlackPawn8);
-                blackRook1.addEventListener("click", clickBlackRook1);
-                blackKnight1.addEventListener("click", clickBlackKnight1);
-                blackBishop1.addEventListener("click", clickBlackBishop1);
-                blackQueen.addEventListener("click", clickBlackQueen);
-                blackKing.addEventListener("click", clickBlackKing);
-                blackBishop2.addEventListener("click", clickBlackBishop2);
-                blackKnight2.addEventListener("click", clickBlackKnight2);
-                blackRook2.addEventListener("click", clickBlackRook2);
+                blackPawn1.onclick = clickBlackPawn1;
+                blackPawn2.onclick = clickBlackPawn2;
+                blackPawn3.onclick = clickBlackPawn3;
+                blackPawn4.onclick = clickBlackPawn4;
+                blackPawn5.onclick = clickBlackPawn5;
+                blackPawn6.onclick = clickBlackPawn6;
+                blackPawn7.onclick = clickBlackPawn7;
+                blackPawn8.onclick = clickBlackPawn8;
+                blackRook1.onclick = clickBlackRook1;
+                blackKnight1.onclick = clickBlackKnight1;
+                blackBishop1.onclick = clickBlackBishop1;
+                blackQueen.onclick = clickBlackQueen;
+                blackKing.onclick = clickBlackKing;
+                blackBishop2.onclick = clickBlackBishop2;
+                blackKnight2.onclick = clickBlackKnight2;
+                blackRook2.onclick = clickBlackRook2;
             }
         }, 2000);
     }
@@ -2459,22 +2459,22 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
         setTimeout(function() {
             player2TurnText.style.display = "none";
             if (white) {
-                whitePawn1.addEventListener("click", clickWhitePawn1);
-                whitePawn2.addEventListener("click", clickWhitePawn2);
-                whitePawn3.addEventListener("click", clickWhitePawn3);
-                whitePawn4.addEventListener("click", clickWhitePawn4);
-                whitePawn5.addEventListener("click", clickWhitePawn5);
-                whitePawn6.addEventListener("click", clickWhitePawn6);
-                whitePawn7.addEventListener("click", clickWhitePawn7);
-                whitePawn8.addEventListener("click", clickWhitePawn8);
-                whiteRook1.addEventListener("click", clickWhiteRook1);
-                whiteKnight1.addEventListener("click", clickWhiteKnight1);
-                whiteBishop1.addEventListener("click", clickWhiteBishop1);
-                whiteQueen.addEventListener("click", clickWhiteQueen);
-                whiteKing.addEventListener("click", clickWhiteKing);
-                whiteBishop2.addEventListener("click", clickWhiteBishop2);
-                whiteKnight2.addEventListener("click", clickWhiteKnight2);
-                whiteRook2.addEventListener("click", clickWhiteRook2);
+                whitePawn1.onclick = clickWhitePawn1;
+                whitePawn2.onclick = clickWhitePawn2;
+                whitePawn3.onclick = clickWhitePawn3;
+                whitePawn4.onclick = clickWhitePawn4;
+                whitePawn5.onclick = clickWhitePawn5;
+                whitePawn6.onclick = clickWhitePawn6;
+                whitePawn7.onclick = clickWhitePawn7;
+                whitePawn8.onclick = clickWhitePawn8;
+                whiteRook1.onclick = clickWhiteRook1;
+                whiteKnight1.onclick = clickWhiteKnight1;
+                whiteBishop1.onclick = clickWhiteBishop1;
+                whiteQueen.onclick = clickWhiteQueen;
+                whiteKing.onclick = clickWhiteKing;
+                whiteBishop2.onclick = clickWhiteBishop2;
+                whiteKnight2.onclick = clickWhiteKnight2;
+                whiteRook2.onclick = clickWhiteRook2;
             }
         }, 2000);
     }
