@@ -9,6 +9,6 @@
   "scripts": {
     "start": "node chessserver.js",
     "nodemon": "nodemon chessserver.js",
-    "heroku": "heroku login"
+    "heroku": "heroku git:remote -a quames-chess"
   }
 }
