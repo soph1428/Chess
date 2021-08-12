@@ -16,9 +16,9 @@ var direction1 = document.getElementById("direction1");
 var codeDiv = document.getElementById("codediv");
 var whiteBase = document.getElementById("whiteBase");
 var blackBase = document.getElementById("blackBase");
-var leaveGame = document.getElementById("leavegame");
-leaveGame.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
-leaveGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
+var newGame = document.getElementById("newgame");
+newGame.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
+newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
 
 setInterval(function() {
 codeText.innerHTML = "Code: " + gameCode;
