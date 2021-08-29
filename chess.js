@@ -7,22 +7,23 @@ const ctx = canvas.getContext("2d");
 var socket = io.connect("https://quames-chess.herokuapp.com");
 var codeText = document.getElementById("codetext");
 var gameCode = Math.random().toString(36).substring(7);
+function codeTextContent() {
+    requestAnimationFrame(codeTextContent);
+codeText.textContent = "Code: " + gameCode;
+}
+codeTextContent();
 var gameInput = document.getElementById("gameinput");
-codeText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX}px`;
 codeText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 28}px`;
 gameInput.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 215}px`;
+codeText.style.left = `${gameInput.style.left.slice(0, gameInput.style.left.length - 2) - Math.ceil(codeText.clientWidth)}px`;
 gameInput.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 33}px`;
 var direction1 = document.getElementById("direction1");
 var codeDiv = document.getElementById("codediv");
 var whiteBase = document.getElementById("whiteBase");
 var blackBase = document.getElementById("blackBase");
 var newGame = document.getElementById("newgame");
-newGame.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
+newGame.style.left = `${Number(gameInput.style.left.slice(0, gameInput.style.left.length - 2)) + Math.ceil(gameInput.clientWidth) + 10}px`;
 newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
-
-setInterval(function() {
-codeText.innerHTML = "Code: " + gameCode;
-}, 0);
 
 socket.emit("new game", gameCode);
 
@@ -642,13 +643,13 @@ socket.on("joined game", (game) => {
     if (game.black == socket.id) {
         white = false;
         blackSocket = true;
-        direction1.innerHTML = "YOU'RE THE BLACK.";
+        direction1.textContent = "YOU'RE THE BLACK.";
     }
 
     if (game.white == socket.id) {
         black = false;
         whiteSocket = true;
-        direction1.innerHTML = "YOU'RE THE WHITE.";
+        direction1.textContent = "YOU'RE THE WHITE.";
     }
 
     //whitePawn1
