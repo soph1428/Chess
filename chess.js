@@ -12,6 +12,8 @@ function codeTextContent() {
 codeText.textContent = "Code: " + gameCode;
 }
 codeTextContent();
+var turnTimer = document.getElementById("turnTimer");
+var timer = "";
 var gameInput = document.getElementById("gameinput");
 codeText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 28}px`;
 gameInput.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 215}px`;
@@ -27,8 +29,7 @@ newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + can
 
 socket.emit("new game", gameCode);
 
-
-gameInput.addEventListener("keypress", (event) => {
+gameInput.addEventListener("keyup", (event) => {
     if (event.key == "Enter") {
         socket.emit("join game", gameInput.value);
     }
@@ -41,6 +42,8 @@ var whiteSocket = false;
 var start = document.getElementById("start");
 start.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 55}px`;
 start.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
+turnTimer.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height / 2}px`;
+turnTimer.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
 var entertext = document.getElementById("entertext");
 entertext.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 25}px`;
 entertext.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 170}px`;
@@ -634,12 +637,6 @@ socket.on("joined game", (game) => {
 
     gameCode = game.code;
 
-    document.addEventListener("keypress", (event) => {
-        if (event.key == "Enter") {
-            socket.emit("start game");
-        }
-    });
-
     if (game.black == socket.id) {
         white = false;
         blackSocket = true;
@@ -699,12 +696,19 @@ socket.on("joined game", (game) => {
     
     //whiteQueen
     tanSquare3.appendChild(whiteQueen);
+});
+    
+document.addEventListener("keyup", (event) => {
+    if (event.key == "Enter" && start.style.display == "unset" && gameInput !== document.activeElement) {
+        socket.emit("start game");
+    }
+});
 
 socket.on("started game", () => {
     start.style.display = "none";
     entertext.style.display = "none";
+    socket.off("started game");
     randomOpponentMove();
-});
 });
 
 socket.on("disconnected", () => {
@@ -716,6 +720,9 @@ function randomOpponentMove() {
         if (blackMove || whiteSocket) {
             blackMove = false;
             whiteSocket = false;
+            clearInterval(timer);
+            turnTimer.textContent = "0:40";
+            turnTimer.style.display = "none";
         var black = document.getElementById(piece.black);
         var child = document.getElementById(piece.child);
         black.parentElement.removeChild(black);
@@ -729,6 +736,9 @@ function randomOpponentMove() {
             if (blackMove || whiteSocket) {
                 blackMove = false;
                 whiteSocket = false;
+                clearInterval(timer);
+                turnTimer.textContent = "0:40";
+                turnTimer.style.display = "none";
             var black = document.getElementById(piece.black);
         var child = document.getElementById(piece.child);
         var pieceCaptured = child.children[0];
@@ -746,6 +756,9 @@ function randomOpponentMove() {
                 if (whiteMove || blackSocket) {
                     whiteMove = false;
                     blackSocket = false;
+                    clearInterval(timer);
+                    turnTimer.textContent = "0:40";
+                    turnTimer.style.display = "none";
                 var white = document.getElementById(piece.white);
                 var child = document.getElementById(piece.child);
                 white.parentElement.removeChild(white);
@@ -759,6 +772,9 @@ function randomOpponentMove() {
                     if (whiteMove || blackSocket) {
                         whiteMove = false;
                         blackSocket = false;
+                        clearInterval(timer);
+                        turnTimer.textContent = "0:40";
+                        turnTimer.style.display = "none";
                     var white = document.getElementById(piece.white);
                 var child = document.getElementById(piece.child);
                 var pieceCaptured = child.children[0];
@@ -773,7 +789,7 @@ function randomOpponentMove() {
                     }
                     });
     if (turn == 1) {
-        player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 30}px`;
+        player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
         player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player1TurnText.style.display = "unset";
         clickBlack = false;
@@ -797,6 +813,25 @@ function randomOpponentMove() {
                 blackKnight2.onclick = clickBlackKnight2;
                 blackRook2.onclick = clickBlackRook2;
             }
+            turnTimer.style.display = "unset";
+                turnTimer.style.color = "black";
+                timer = setInterval(() => {
+                    var timerNumber = Number(turnTimer.textContent.slice(2, turnTimer.textContent.length));
+                    if (timerNumber > 1) {
+                    turnTimer.textContent = `0:${Number(turnTimer.textContent.slice(2, turnTimer.textContent.length)) - 1}`;
+                    if (turnTimer.textContent.length == 3) {
+                        turnTimer.textContent = turnTimer.textContent.replace(":", ":0");
+                    }
+                }
+                else {
+                    clearInterval(timer);
+                    moveWhite = true;
+                    turn = 2;
+                    turnTimer.textContent = "0:40";
+                    turnTimer.style.display = "none";
+                    randomOpponentMove();
+                }
+                }, 1000);
         }, 2000);
     }
 
@@ -2464,7 +2499,7 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
 }
 
     if (turn == 2) {
-        player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 30}px`;
+        player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
         player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player2TurnText.style.display = "unset";
         clickWhite = false;
@@ -2488,6 +2523,25 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
                 whiteKnight2.onclick = clickWhiteKnight2;
                 whiteRook2.onclick = clickWhiteRook2;
             }
+            turnTimer.style.display = "unset";
+                turnTimer.style.color = "white";
+                timer = setInterval(() => {
+                    var timerNumber = Number(turnTimer.textContent.slice(2, turnTimer.textContent.length));
+                    if (timerNumber > 1) {
+                    turnTimer.textContent = `0:${Number(turnTimer.textContent.slice(2, turnTimer.textContent.length)) - 1}`;
+                    if (turnTimer.textContent.length == 3) {
+                        turnTimer.textContent = turnTimer.textContent.replace(":", ":0");
+                    }
+                }
+                else {
+                    clearInterval(timer);
+                    moveWhite = false;
+                    turn = 1;
+                    turnTimer.textContent = "0:40";
+                    turnTimer.style.display = "none";
+                    randomOpponentMove();
+                }
+                }, 1000);
         }, 2000);
     }
 

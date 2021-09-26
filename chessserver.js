@@ -3,6 +3,9 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
+io.set("heartbeat timeout", 50000);
+io.set("heartbeat interval", 2000);
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/chess.html");
 });
@@ -48,9 +51,6 @@ io.on("connection", (socket) => {
                 socket.on("whiteWinner", () => {
                     io.to(input).emit("whiteWinnerBoth");
                 });
-                socket.on("undoWhiteMove", () => {
-                    io.to(input).emit("undoWhiteMoveBoth");
-                });
                 socket.on("disconnect", () => {
                     delete rooms[input][socket.id];
                     socket.leave(game);
@@ -67,9 +67,6 @@ io.on("connection", (socket) => {
         });
         socket.on("blackWinner", () => {
             io.to(game).emit("blackWinnerBoth");
-        });
-        socket.on("undoBlackMove", () => {
-            io.to(game).emit("undoBlackMoveBoth");
         });
         socket.on("start game", () => {
             io.to(game).emit("started game");
