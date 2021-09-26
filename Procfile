@@ -1,1 +1,1 @@
-web:node chessserver.js
+web:npm start
