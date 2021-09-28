@@ -41,12 +41,15 @@ io.on("connection", (socket) => {
                 });
                 socket.on("white", (piece) => {
                     io.to(input).emit("moveWhite", piece);
+                    return true;
                 });
                 socket.on("whiteHit", (piece) => {
                     io.to(input).emit("moveWhiteHit", piece);
+                    return true;
                 });
                 socket.on("whiteWinner", () => {
                     io.to(input).emit("whiteWinnerBoth");
+                    return true;
                 });
                 socket.on("disconnect", () => {
                     delete rooms[input][socket.id];
@@ -58,12 +61,15 @@ io.on("connection", (socket) => {
         });
         socket.on("black", (piece) => {
             io.to(game).emit("moveBlack", piece);
+            return true;
         });
         socket.on("blackHit", (piece) => {
             io.to(game).emit("moveBlackHit", piece);
+            return true;
         });
         socket.on("blackWinner", () => {
             io.to(game).emit("blackWinnerBoth");
+            return true;
         });
         socket.on("start game", () => {
             io.to(game).emit("started game");

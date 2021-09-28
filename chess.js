@@ -604,7 +604,8 @@ function drawGame() {
 }
 
 socket.on("full room", () => {
-    return alert("Game is full.");
+    alert("Game is full.");
+    return true;
 });
 
 drawGame();
@@ -624,11 +625,13 @@ let winner = setInterval(function() {
 socket.on("whiteWinnerBoth", () => {
     alert("White wins!");
     document.location.reload();
+    return true;
 });
 
 socket.on("blackWinnerBoth", () => {
     alert("Black wins!");
     document.location.reload();
+    return true;
 });
 
 socket.on("joined game", (game) => {
@@ -696,6 +699,7 @@ socket.on("joined game", (game) => {
     
     //whiteQueen
     tanSquare3.appendChild(whiteQueen);
+    return true;
 });
     
 document.addEventListener("keyup", (event) => {
@@ -709,10 +713,12 @@ socket.on("started game", () => {
     entertext.style.display = "none";
     socket.off("started game");
     randomOpponentMove();
+    return true;
 });
 
 socket.on("disconnected", () => {
     document.location.reload();
+    return true;
 });
 
 function randomOpponentMove() {
@@ -731,7 +737,8 @@ function randomOpponentMove() {
     turn = 2;
     randomOpponentMove();
         }
-        });
+    return true;    
+    });
         socket.on("moveBlackHit", (piece) => {
             if (blackMove || whiteSocket) {
                 blackMove = false;
@@ -751,7 +758,8 @@ function randomOpponentMove() {
         turn = 2;
         randomOpponentMove();
             }
-            });
+        return true;    
+        });
             socket.on("moveWhite", (piece) => {
                 if (whiteMove || blackSocket) {
                     whiteMove = false;
@@ -767,7 +775,8 @@ function randomOpponentMove() {
             turn = 1;
             randomOpponentMove();
                 }
-                });
+            return true;    
+            });
                 socket.on("moveWhiteHit", (piece) => {
                     if (whiteMove || blackSocket) {
                         whiteMove = false;
@@ -787,7 +796,8 @@ function randomOpponentMove() {
                 turn = 1;
                 randomOpponentMove();
                     }
-                    });
+                return true;    
+                });
     if (turn == 1) {
         player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
         player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
