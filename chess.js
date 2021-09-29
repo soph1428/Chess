@@ -724,9 +724,9 @@ socket.on("disconnected", () => {
 function randomOpponentMove() {
     socket.on("moveBlack", (piece) => {
         if (blackMove || whiteSocket) {
+            clearInterval(timer);
             blackMove = false;
             whiteSocket = false;
-            clearInterval(timer);
             turnTimer.textContent = "0:40";
             turnTimer.style.display = "none";
         var black = document.getElementById(piece.black);
@@ -741,9 +741,9 @@ function randomOpponentMove() {
     });
         socket.on("moveBlackHit", (piece) => {
             if (blackMove || whiteSocket) {
+                clearInterval(timer);
                 blackMove = false;
                 whiteSocket = false;
-                clearInterval(timer);
                 turnTimer.textContent = "0:40";
                 turnTimer.style.display = "none";
             var black = document.getElementById(piece.black);
@@ -762,9 +762,9 @@ function randomOpponentMove() {
         });
             socket.on("moveWhite", (piece) => {
                 if (whiteMove || blackSocket) {
+                    clearInterval(timer);
                     whiteMove = false;
                     blackSocket = false;
-                    clearInterval(timer);
                     turnTimer.textContent = "0:40";
                     turnTimer.style.display = "none";
                 var white = document.getElementById(piece.white);
@@ -779,9 +779,9 @@ function randomOpponentMove() {
             });
                 socket.on("moveWhiteHit", (piece) => {
                     if (whiteMove || blackSocket) {
+                        clearInterval(timer);
                         whiteMove = false;
                         blackSocket = false;
-                        clearInterval(timer);
                         turnTimer.textContent = "0:40";
                         turnTimer.style.display = "none";
                     var white = document.getElementById(piece.white);
@@ -799,11 +799,28 @@ function randomOpponentMove() {
                 return true;    
                 });
     if (turn == 1) {
+        blackPawn1.onclick = "";
+                blackPawn2.onclick = "";
+                blackPawn3.onclick = "";
+                blackPawn4.onclick = "";
+                blackPawn5.onclick = "";
+                blackPawn6.onclick = "";
+                blackPawn7.onclick = "";
+                blackPawn8.onclick = "";
+                blackRook1.onclick = "";
+                blackKnight1.onclick = "";
+                blackBishop1.onclick = "";
+                blackQueen.onclick = "";
+                blackKing.onclick = "";
+                blackBishop2.onclick = "";
+                blackKnight2.onclick = "";
+                blackRook2.onclick = "";
         player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
         player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player1TurnText.style.display = "unset";
         clickBlack = false;
         setTimeout(function() {
+            clearInterval(timer);
             player1TurnText.style.display = "none";
             if (black) {
                 blackPawn1.onclick = clickBlackPawn1;
@@ -2509,11 +2526,28 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
 }
 
     if (turn == 2) {
+        whitePawn1.onclick = "";
+                whitePawn2.onclick = "";
+                whitePawn3.onclick = "";
+                whitePawn4.onclick = "";
+                whitePawn5.onclick = "";
+                whitePawn6.onclick = "";
+                whitePawn7.onclick = "";
+                whitePawn8.onclick = "";
+                whiteRook1.onclick = "";
+                whiteKnight1.onclick = "";
+                whiteBishop1.onclick = "";
+                whiteQueen.onclick = "";
+                whiteKing.onclick = "";
+                whiteBishop2.onclick = "";
+                whiteKnight2.onclick = "";
+                whiteRook2.onclick = "";
         player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
         player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player2TurnText.style.display = "unset";
         clickWhite = false;
         setTimeout(function() {
+            clearInterval(timer);
             player2TurnText.style.display = "none";
             if (white) {
                 whitePawn1.onclick = clickWhitePawn1;
