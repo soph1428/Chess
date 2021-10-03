@@ -1,7 +1,6 @@
 const canvas = document.getElementById("canvas");
 document.querySelector("p").style.marginTop = `${canvas.getBoundingClientRect().top + canvas.height + window.scrollY - 30}px`;
 const ctx = canvas.getContext("2d");
-
 //Heroku: https://quames-chess.herokuapp.com
 //Server: http://127.0.0.1:5500
 var socket = io.connect("https://quames-chess.herokuapp.com");
@@ -26,15 +25,12 @@ var blackBase = document.getElementById("blackBase");
 var newGame = document.getElementById("newgame");
 newGame.style.left = `${Number(gameInput.style.left.slice(0, gameInput.style.left.length - 2)) + Math.ceil(gameInput.clientWidth) + 10}px`;
 newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
-
 socket.emit("new game", gameCode);
-
 gameInput.addEventListener("keyup", (event) => {
     if (event.key == "Enter") {
         socket.emit("join game", gameInput.value);
     }
 });
-
 var blackMove = false;
 var whiteMove = false;
 var blackSocket = false;
@@ -240,7 +236,6 @@ brownSquare31.style.left = `${canvas.getBoundingClientRect().left + window.scrol
 brownSquare31.style.top = `437.5px`;
 brownSquare32.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 367}px`;
 brownSquare32.style.top = `437.5px`;
-
 let checkerboard = document.getElementById("checkerboard");
 let player1TurnText = document.getElementById("player1TurnText");
 let player2TurnText = document.getElementById("player2TurnText");
@@ -252,9 +247,7 @@ let clickBlack = false;
 let clickWhite = false;
 let black = true;
 let white = true;
-
 var squares = Array.from(checkerboard.children);
-
 //whitePawn1
 this.whitePawn1 = document.createElement("img");
 this.whitePawn1.id = "whitePawn1";
@@ -264,7 +257,6 @@ this.whitePawn1.style.left = "-10px";
 this.whitePawn1.style.top = "-13px";
 this.whitePawn1.width = 80;
 this.whitePawn1.height = 90;
-
 //whitePawn2
 this.whitePawn2 = document.createElement("img");
 this.whitePawn2.id = "whitePawn2";
@@ -274,7 +266,6 @@ this.whitePawn2.style.left = "-10px";
 this.whitePawn2.style.top = "-13px";
 this.whitePawn2.width = 80;
 this.whitePawn2.height = 90;
-
 //whitePawn3
 this.whitePawn3 = document.createElement("img");
 this.whitePawn3.id = "whitePawn3";
@@ -284,7 +275,6 @@ this.whitePawn3.style.left = "-10px";
 this.whitePawn3.style.top = "-13px";
 this.whitePawn3.width = 80;
 this.whitePawn3.height = 90;
-
 //whitePawn4
 this.whitePawn4 = document.createElement("img");
 this.whitePawn4.id = "whitePawn4";
@@ -294,7 +284,6 @@ this.whitePawn4.style.left = "-10px";
 this.whitePawn4.style.top = "-13px";
 this.whitePawn4.width = 80;
 this.whitePawn4.height = 90;
-
 //whitePawn5
 this.whitePawn5 = document.createElement("img");
 this.whitePawn5.id = "whitePawn5";
@@ -304,7 +293,6 @@ this.whitePawn5.style.left = "-10px";
 this.whitePawn5.style.top = "-13px";
 this.whitePawn5.width = 80;
 this.whitePawn5.height = 90;
-
 //whitePawn6
 this.whitePawn6 = document.createElement("img");
 this.whitePawn6.id = "whitePawn6";
@@ -314,7 +302,6 @@ this.whitePawn6.style.left = "-10px";
 this.whitePawn6.style.top = "-13px";
 this.whitePawn6.width = 80;
 this.whitePawn6.height = 90;
-
 //whitePawn7
 this.whitePawn7 = document.createElement("img");
 this.whitePawn7.id = "whitePawn7";
@@ -324,7 +311,6 @@ this.whitePawn7.style.left = "-10px";
 this.whitePawn7.style.top = "-13px";
 this.whitePawn7.width = 80;
 this.whitePawn7.height = 90;
-
 //whitePawn8
 this.whitePawn8 = document.createElement("img");
 this.whitePawn8.id = "whitePawn8";
@@ -334,7 +320,6 @@ this.whitePawn8.style.left = "-10px";
 this.whitePawn8.style.top = "-13px";
 this.whitePawn8.width = 80;
 this.whitePawn8.height = 90;
-
 //whiteRook1
 this.whiteRook1 = document.createElement("img");
 this.whiteRook1.id = "whiteRook1";
@@ -343,7 +328,6 @@ this.whiteRook1.style.position = "absolute";
 this.whiteRook1.style.left = "4px";
 this.whiteRook1.width = 50;
 this.whiteRook1.height = 60;
-
 //whiteRook2
 this.whiteRook2 = document.createElement("img");
 this.whiteRook2.id = "whiteRook2";
@@ -352,7 +336,6 @@ this.whiteRook2.style.position = "absolute";
 this.whiteRook2.style.left = "4px";
 this.whiteRook2.width = 50;
 this.whiteRook2.height = 60;
-
 //whiteKnight1
 this.whiteKnight1 = document.createElement("img");
 this.whiteKnight1.id = "whiteKnight1";
@@ -362,7 +345,6 @@ this.whiteKnight1.style.top = "-4px";
 this.whiteKnight1.style.left = "-4px";
 this.whiteKnight1.width = 65;
 this.whiteKnight1.height = 69;
-
 //whiteKnight2
 this.whiteKnight2 = document.createElement("img");
 this.whiteKnight2.id = "whiteKnight2";
@@ -372,7 +354,6 @@ this.whiteKnight2.style.top = "-4px";
 this.whiteKnight2.style.left = "-4px";
 this.whiteKnight2.width = 65;
 this.whiteKnight2.height = 69;
-
 //whiteBishop1
 this.whiteBishop1 = document.createElement("img");
 this.whiteBishop1.id = "whiteBishop1";
@@ -381,7 +362,6 @@ this.whiteBishop1.style.position = "absolute";
 this.whiteBishop1.style.left = "3px";
 this.whiteBishop1.width = 50;
 this.whiteBishop1.height = 60;
-
 //whiteBishop2
 this.whiteBishop2 = document.createElement("img");
 this.whiteBishop2.id = "whiteBishop2";
@@ -390,7 +370,6 @@ this.whiteBishop2.style.position = "absolute";
 this.whiteBishop2.style.left = "3px";
 this.whiteBishop2.width = 50;
 this.whiteBishop2.height = 60;
-
 //whiteKing
 this.whiteKing = document.createElement("img");
 this.whiteKing.id = "whiteKing";
@@ -399,7 +378,6 @@ this.whiteKing.style.position = "absolute";
 this.whiteKing.style.left = "5px";
 this.whiteKing.width = 45;
 this.whiteKing.height = 60;
-
 //whiteQueen
 this.whiteQueen = document.createElement("img");
 this.whiteQueen.id = "whiteQueen";
@@ -408,7 +386,6 @@ this.whiteQueen.style.position = "absolute";
 this.whiteQueen.style.left = "4px";
 this.whiteQueen.width = 50;
 this.whiteQueen.height = 65;
-
 //blackPawn1
 this.blackPawn1 = document.createElement("img");
 this.blackPawn1.id = "blackPawn1";
@@ -417,7 +394,6 @@ this.blackPawn1.style.position = "absolute";
 this.blackPawn1.style.left = "5px";
 this.blackPawn1.width = 45;
 this.blackPawn1.height = 60;
-
 //blackPawn2
 this.blackPawn2 = document.createElement("img");
 this.blackPawn2.id = "blackPawn2";
@@ -426,7 +402,6 @@ this.blackPawn2.style.position = "absolute";
 this.blackPawn2.style.left = "5px";
 this.blackPawn2.width = 45;
 this.blackPawn2.height = 60;
-
 //blackPawn3
 this.blackPawn3 = document.createElement("img");
 this.blackPawn3.id = "blackPawn3";
@@ -435,7 +410,6 @@ this.blackPawn3.style.position = "absolute";
 this.blackPawn3.style.left = "5px";
 this.blackPawn3.width = 45;
 this.blackPawn3.height = 60;
-
 //blackPawn4
 this.blackPawn4 = document.createElement("img");
 this.blackPawn4.id = "blackPawn4";
@@ -444,7 +418,6 @@ this.blackPawn4.style.position = "absolute";
 this.blackPawn4.style.left = "5px";
 this.blackPawn4.width = 45;
 this.blackPawn4.height = 60;
-
 //blackPawn5
 this.blackPawn5 = document.createElement("img");
 this.blackPawn5.id = "blackPawn5";
@@ -453,7 +426,6 @@ this.blackPawn5.style.position = "absolute";
 this.blackPawn5.style.left = "5px";
 this.blackPawn5.width = 45;
 this.blackPawn5.height = 60;
-
 //blackPawn6
 this.blackPawn6 = document.createElement("img");
 this.blackPawn6.id = "blackPawn6";
@@ -462,7 +434,6 @@ this.blackPawn6.style.position = "absolute";
 this.blackPawn6.style.left = "5px";
 this.blackPawn6.width = 45;
 this.blackPawn6.height = 60;
-
 //blackPawn7
 this.blackPawn7 = document.createElement("img");
 this.blackPawn7.id = "blackPawn7";
@@ -471,7 +442,6 @@ this.blackPawn7.style.position = "absolute";
 this.blackPawn7.style.left = "5px";
 this.blackPawn7.width = 45;
 this.blackPawn7.height = 60;
-
 //blackPawn8
 this.blackPawn8 = document.createElement("img");
 this.blackPawn8.id = "blackPawn8";
@@ -480,7 +450,6 @@ this.blackPawn8.style.position = "absolute";
 this.blackPawn8.style.left = "5px";
 this.blackPawn8.width = 45;
 this.blackPawn8.height = 60;
-
 //blackRook1
 this.blackRook1 = document.createElement("img");
 this.blackRook1.id = "blackRook1";
@@ -489,7 +458,6 @@ this.blackRook1.style.position = "absolute";
 this.blackRook1.style.left = "4px";
 this.blackRook1.width = 50;
 this.blackRook1.height = 60;
-
 //blackRook2
 this.blackRook2 = document.createElement("img");
 this.blackRook2.id = "blackRook2";
@@ -498,7 +466,6 @@ this.blackRook2.style.position = "absolute";
 this.blackRook2.style.left = "4px";
 this.blackRook2.width = 50;
 this.blackRook2.height = 60;
-
 //blackKnight1
 this.blackKnight1 = document.createElement("img");
 this.blackKnight1.id = "blackKnight1";
@@ -507,7 +474,6 @@ this.blackKnight1.style.position = "absolute";
 this.blackKnight1.style.left = "7px";
 this.blackKnight1.width = 43;
 this.blackKnight1.height = 65;
-
 //blackKnight2
 this.blackKnight2 = document.createElement("img");
 this.blackKnight2.id = "blackKnight2";
@@ -516,7 +482,6 @@ this.blackKnight2.style.position = "absolute";
 this.blackKnight2.style.left = "7px";
 this.blackKnight2.width = 43;
 this.blackKnight2.height = 65;
-
 //blackBishop1
 this.blackBishop1 = document.createElement("img");
 this.blackBishop1.id = "blackBishop1";
@@ -525,7 +490,6 @@ this.blackBishop1.style.position = "absolute";
 this.blackBishop1.style.left = "4px";
 this.blackBishop1.width = 50;
 this.blackBishop1.height = 70;
-
 //blackBishop2
 this.blackBishop2 = document.createElement("img");
 this.blackBishop2.id = "blackBishop2";
@@ -534,7 +498,6 @@ this.blackBishop2.style.position = "absolute";
 this.blackBishop2.style.left = "4px";
 this.blackBishop2.width = 50;
 this.blackBishop2.height = 70;
-
 //blackQueen
 this.blackQueen = document.createElement("img");
 this.blackQueen.id = "blackQueen";
@@ -543,7 +506,6 @@ this.blackQueen.style.position = "absolute";
 this.blackQueen.style.left = "-21px";
 this.blackQueen.width = 100;
 this.blackQueen.height = 63;
-
 //blackKing
 this.blackKing = document.createElement("img");
 this.blackKing.id = "blackKing";
@@ -552,162 +514,118 @@ this.blackKing.style.position = "absolute";
 this.blackKing.style.left = "5px";
 this.blackKing.width = 50;
 this.blackKing.height = 63;
-
 function drawGame() {
     //blackPawn1
     tanSquare25.appendChild(blackPawn1);
-
     //blackPawn2
     brownSquare25.appendChild(blackPawn2);
-
     //blackPawn3
     tanSquare26.appendChild(blackPawn3);
-    
     //blackPawn4
     brownSquare26.appendChild(blackPawn4);
-    
     //blackPawn5
     tanSquare27.appendChild(blackPawn5);
-    
     //blackPawn6
     brownSquare27.appendChild(blackPawn6);
-    
     //blackPawn7
     tanSquare28.appendChild(blackPawn7);
-    
     //blackPawn8
-    brownSquare28.appendChild(blackPawn8);
-
+    brownSquare28.appendChild(blackPawn8)
     //blackRook1
     brownSquare29.appendChild(blackRook1);
-    
     //blackRook2
-    tanSquare32.appendChild(blackRook2);
-
+    tanSquare32.appendChild(blackRook2)
     //blackKnight1
     tanSquare29.appendChild(blackKnight1);
-    
     //blackKnight2
     brownSquare32.appendChild(blackKnight2);
-    
     //blackBishop1
     brownSquare30.appendChild(blackBishop1);
-    
     //blackBishop2
     tanSquare31.appendChild(blackBishop2);
-    
     //blackQueen
     tanSquare30.appendChild(blackQueen);
-    
     //blackKing
     brownSquare31.appendChild(blackKing);
 }
-
 socket.on("full room", () => {
     alert("Game is full.");
     return true;
 });
-
 drawGame();
-
 let winner = setInterval(function() {
     if (blackKing.style.position == "unset") {
         clearInterval(winner);
         socket.emit("whiteWinner");
     }
-    
     if (whiteKing.style.position == "unset") {
         clearInterval(winner);
         socket.emit("blackWinner");
     }
 }, 0);
-
 socket.on("whiteWinnerBoth", () => {
     alert("White wins!");
     document.location.reload();
     return true;
 });
-
 socket.on("blackWinnerBoth", () => {
     alert("Black wins!");
     document.location.reload();
     return true;
 });
-
 socket.on("joined game", (game) => {
     start.style.display = "unset";
     entertext.style.display = "unset";
-
     gameCode = game.code;
-
     if (game.black == socket.id) {
         white = false;
         blackSocket = true;
         direction1.textContent = "YOU'RE THE BLACK.";
     }
-
     if (game.white == socket.id) {
         black = false;
         whiteSocket = true;
         direction1.textContent = "YOU'RE THE WHITE.";
     }
-
     //whitePawn1
     brownSquare5.appendChild(whitePawn1);
-    
     //whitePawn2
     tanSquare5.appendChild(whitePawn2);
-    
     //whitePawn3
     brownSquare6.appendChild(whitePawn3);
-    
     //whitePawn4
     tanSquare6.appendChild(whitePawn4);
-    
     //whitePawn5
     brownSquare7.appendChild(whitePawn5);
-    
     //whitePawn6
     tanSquare7.appendChild(whitePawn6);
-    
     //whitePawn7
     brownSquare8.appendChild(whitePawn7);
-    
     //whitePawn8
     tanSquare8.appendChild(whitePawn8);
-    
     //whiteRook1
     tanSquare1.appendChild(whiteRook1);
-    
     //whiteRook2
-    brownSquare4.appendChild(whiteRook2);
-
+    brownSquare4.appendChild(whiteRook2)
     //whiteKnight1
     brownSquare1.appendChild(whiteKnight1);
-    
     //whiteKnight2
     tanSquare4.appendChild(whiteKnight2);
-    
     //whiteBishop1
     tanSquare2.appendChild(whiteBishop1);
-    
     //whiteBishop2
     brownSquare3.appendChild(whiteBishop2);
-    
     //whiteKing
     brownSquare2.appendChild(whiteKing);
-    
     //whiteQueen
     tanSquare3.appendChild(whiteQueen);
     return true;
 });
-    
 document.addEventListener("keyup", (event) => {
     if (event.key == "Enter" && start.style.display == "unset" && gameInput !== document.activeElement) {
         socket.emit("start game");
     }
 });
-
 socket.on("started game", () => {
     start.style.display = "none";
     entertext.style.display = "none";
@@ -715,12 +633,10 @@ socket.on("started game", () => {
     randomOpponentMove();
     return true;
 });
-
 socket.on("disconnected", () => {
     document.location.reload();
     return true;
 });
-
 function randomOpponentMove() {
     socket.on("moveBlack", (piece) => {
         if (blackMove || whiteSocket) {
@@ -861,7 +777,6 @@ function randomOpponentMove() {
                 }, 1000);
         }, 2000);
     }
-
 function clickBlackPawn1() {
     clickBlack = true;
     blackMove = true;
@@ -869,7 +784,6 @@ function clickBlackPawn1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn1;
 }
-
 function moveBlackPawn1(event) {
     if (clickBlack) {
     if (blackPawn1.contains(event.target)) {
@@ -919,7 +833,6 @@ function moveBlackPawn1(event) {
 });
     }
 }
-
 function clickBlackPawn2() {
     clickBlack = true;
     blackMove = true;
@@ -927,7 +840,6 @@ function clickBlackPawn2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn2;
 }
-
 function moveBlackPawn2(event) {
     if (clickBlack) {
     if (blackPawn2.contains(event.target)) {
@@ -977,7 +889,6 @@ function moveBlackPawn2(event) {
 });
 }
 }
-
 function clickBlackPawn3() {
     clickBlack = true;
     blackMove = true;
@@ -985,7 +896,6 @@ function clickBlackPawn3() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn3;
 }
-
 function moveBlackPawn3(event) {
     if (clickBlack) {
     if (blackPawn3.contains(event.target)) {
@@ -1034,7 +944,6 @@ function moveBlackPawn3(event) {
 });
 }
 }
-
 function clickBlackPawn4() {
     clickBlack = true;
     blackMove = true;
@@ -1042,7 +951,6 @@ function clickBlackPawn4() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn4;
 }
-
 function moveBlackPawn4(event) {
     if (clickBlack) {
     if (blackPawn4.contains(event.target)) {
@@ -1092,7 +1000,6 @@ function moveBlackPawn4(event) {
 });
 }
 }
-
 function clickBlackPawn5() {
     clickBlack = true;
     blackMove = true;
@@ -1100,7 +1007,6 @@ function clickBlackPawn5() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn5;
 }
-
 function moveBlackPawn5(event) {
     if (clickBlack) {
     if (blackPawn5.contains(event.target)) {
@@ -1150,7 +1056,6 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentE
 });
     }
 }
-
 function clickBlackPawn6() {
     clickBlack = true;
     blackMove = true;
@@ -1158,7 +1063,6 @@ function clickBlackPawn6() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn6;
 }
-
 function moveBlackPawn6(event) {
     if (clickBlack) {
     if (blackPawn6.contains(event.target)) {
@@ -1207,7 +1111,6 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentE
 });
 }
 }
-
 function clickBlackPawn7() {
     clickBlack = true;
     blackMove = true;
@@ -1215,7 +1118,6 @@ function clickBlackPawn7() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn7;
 }
-
 function moveBlackPawn7(event) {
     if (clickBlack) {
     if (blackPawn7.contains(event.target)) {
@@ -1264,7 +1166,6 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentE
 });
 }
 }
-
 function clickBlackPawn8() {
     clickBlack = true;
     blackMove = true;
@@ -1272,7 +1173,6 @@ function clickBlackPawn8() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackPawn8;
 }
-
 function moveBlackPawn8(event) {
     if (clickBlack) {
     if (blackPawn8.contains(event.target)) {
@@ -1321,7 +1221,6 @@ if (child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentE
 });
 }
 }
-
 function clickBlackRook1() {
     clickBlack = true;
     blackMove = true;
@@ -1329,7 +1228,6 @@ function clickBlackRook1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackRook1;
 }
-
 function moveBlackRook1(event) {
     if (clickBlack) {
     if (blackRook1.contains(event.target)) {
@@ -1490,7 +1388,6 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
 });
 }
 }
-
 function clickBlackKnight1() {
     clickBlack = true;
     blackMove = true;
@@ -1498,7 +1395,6 @@ function clickBlackKnight1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackKnight1;
 }
-
 function moveBlackKnight1(event) {
     if (clickBlack) {
     if (blackKnight1.contains(event.target)) {
@@ -1601,7 +1497,6 @@ function moveBlackKnight1(event) {
 });
 }
 }
-
 function clickBlackBishop1() {
     clickBlack = true;
     blackMove = true;
@@ -1609,7 +1504,6 @@ function clickBlackBishop1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackBishop1;
 }
-
 function moveBlackBishop1(event) {
     if (clickBlack) {
     if (blackBishop1.contains(event.target)) {
@@ -1708,7 +1602,6 @@ function moveBlackBishop1(event) {
 });
 }
 }
-
 function clickBlackQueen() {
     clickBlack = true;
     blackMove = true;
@@ -1716,7 +1609,6 @@ function clickBlackQueen() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackQueen;
 }
-
 function moveBlackQueen(event) {
     if (clickBlack) {
     if (blackQueen.contains(event.target)) {
@@ -1967,7 +1859,6 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
 });
 }
 }
-
 function clickBlackKing() {
     clickBlack = true;
     blackMove = true;
@@ -1975,7 +1866,6 @@ function clickBlackKing() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackKing;
 }
-
 function moveBlackKing(event) {
     if (clickBlack) {
     if (blackKing.contains(event.target)) {
@@ -2139,7 +2029,6 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
 });
 }
 }
-
 function clickBlackBishop2() {
     clickBlack = true;
     blackMove = true;
@@ -2147,7 +2036,6 @@ function clickBlackBishop2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackBishop2;
 }
-
 function moveBlackBishop2(event) {
     if (clickBlack) {
     if (blackBishop2.contains(event.target)) {
@@ -2244,7 +2132,6 @@ function moveBlackBishop2(event) {
 });
 }
 }
-
 function clickBlackKnight2() {
     clickBlack = true;
     blackMove = true;
@@ -2252,7 +2139,6 @@ function clickBlackKnight2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackKnight2;
 }
-
 function moveBlackKnight2(event) {
     if (clickBlack) {
     if (blackKnight2.contains(event.target)) {
@@ -2355,7 +2241,6 @@ function moveBlackKnight2(event) {
 });
 }
 }
-
 function clickBlackRook2() {
     clickBlack = true;
     blackMove = true;
@@ -2363,7 +2248,6 @@ function clickBlackRook2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveBlackRook2;
 }
-
 function moveBlackRook2(event) {
     if (clickBlack) {
     if (blackRook2.contains(event.target)) {
@@ -2524,7 +2408,6 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
 });
 }
 }
-
     if (turn == 2) {
         whitePawn1.onclick = "";
                 whitePawn2.onclick = "";
@@ -2588,7 +2471,6 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
                 }, 1000);
         }, 2000);
     }
-
 function clickWhitePawn1() {
     clickWhite = true;
     whiteMove = true;
@@ -2596,7 +2478,6 @@ function clickWhitePawn1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn1;
 }
-
 function moveWhitePawn1(event) {
     if (clickWhite) {
     if (whitePawn1.contains(event.target)) {
@@ -2646,7 +2527,6 @@ function moveWhitePawn1(event) {
 });
 }
 }
-
 function clickWhitePawn2() {
     clickWhite = true;
     whiteMove = true;
@@ -2654,7 +2534,6 @@ function clickWhitePawn2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn2;
 }
-
 function moveWhitePawn2(event) {
     if (clickWhite) {
     if (whitePawn2.contains(event.target)) {
@@ -2704,7 +2583,6 @@ function moveWhitePawn2(event) {
 });
 }
 }
-
 function clickWhitePawn3() {
     clickWhite = true;
     whiteMove = true;
@@ -2712,7 +2590,6 @@ function clickWhitePawn3() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn3;
 }
-
 function moveWhitePawn3(event) {
     if (clickWhite) {
     if (whitePawn3.contains(event.target)) {
@@ -2761,7 +2638,6 @@ function moveWhitePawn3(event) {
 });
 }
 }
-
 function clickWhitePawn4() {
     clickWhite = true;
     whiteMove = true;
@@ -2769,7 +2645,6 @@ function clickWhitePawn4() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn4;
 }
-
 function moveWhitePawn4(event) {
     if (clickWhite) {
     if (whitePawn4.contains(event.target)) {
@@ -2819,7 +2694,6 @@ function moveWhitePawn4(event) {
 });
 }
 }
-
 function clickWhitePawn5() {
     clickWhite = true;
     whiteMove = true;
@@ -2827,7 +2701,6 @@ function clickWhitePawn5() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn5;
 }
-
 function moveWhitePawn5(event) {
     if (clickWhite) {
     if (whitePawn5.contains(event.target)) {
@@ -2877,7 +2750,6 @@ if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentE
     });
 }
 }
-
 function clickWhitePawn6() {
     clickWhite = true;
     whiteMove = true;
@@ -2885,7 +2757,6 @@ function clickWhitePawn6() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn6;
 }
-
 function moveWhitePawn6(event) {
     if (clickWhite) {
     if (whitePawn6.contains(event.target)) {
@@ -2934,7 +2805,6 @@ if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentE
 });
 }
 }
-
 function clickWhitePawn7() {
     clickWhite = true;
     whiteMove = true;
@@ -2942,7 +2812,6 @@ function clickWhitePawn7() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn7;
 }
-
 function moveWhitePawn7(event) {
     if (clickWhite) {
     if (whitePawn7.contains(event.target)) {
@@ -2991,7 +2860,6 @@ function moveWhitePawn7(event) {
 });
 }
 }
-
 function clickWhitePawn8() {
     clickWhite = true;
     whiteMove = true;
@@ -2999,7 +2867,6 @@ function clickWhitePawn8() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhitePawn8;
 }
-
 function moveWhitePawn8(event) {
     if (clickWhite) {
     if (whitePawn8.contains(event.target)) {
@@ -3048,7 +2915,6 @@ function moveWhitePawn8(event) {
 });
 }
 }
-
 function clickWhiteRook1() {
     clickWhite = true;
     whiteMove = true;
@@ -3056,7 +2922,6 @@ function clickWhiteRook1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteRook1;
 }
-
 function moveWhiteRook1(event) {
     if (clickWhite) {
     if (whiteRook1.contains(event.target)) {
@@ -3217,7 +3082,6 @@ Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.sty
 });
 }
 }
-
 function clickWhiteKnight1() {
     clickWhite = true;
     whiteMove = true;
@@ -3225,7 +3089,6 @@ function clickWhiteKnight1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteKnight1;
 }
-
 function moveWhiteKnight1(event) {
     if (clickWhite) {
     if (whiteKnight1.contains(event.target)) {
@@ -3328,7 +3191,6 @@ function moveWhiteKnight1(event) {
 });
 }
 }
-
 function clickWhiteBishop1() {
     clickWhite = true;
     whiteMove = true;
@@ -3336,7 +3198,6 @@ function clickWhiteBishop1() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteBishop1;
 }
-
 function moveWhiteBishop1(event) {
     if (clickWhite) {
     if (whiteBishop1.contains(event.target)) {
@@ -3433,7 +3294,6 @@ function moveWhiteBishop1(event) {
 });
 }
 }
-
 function clickWhiteQueen() {
     clickWhite = true;
     whiteMove = true;
@@ -3441,7 +3301,6 @@ function clickWhiteQueen() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteQueen;
 }
-
 function moveWhiteQueen(event) {
     if (clickWhite) {
     if (whiteQueen.contains(event.target)) {
@@ -3692,7 +3551,6 @@ Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.sty
 });
 }
 }
-
 function clickWhiteKing() {
     clickWhite = true;
     whiteMove = true;
@@ -3700,7 +3558,6 @@ function clickWhiteKing() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteKing;
 }
-
 function moveWhiteKing(event) {
     if (clickWhite) {
     if (whiteKing.contains(event.target)) {
@@ -3864,7 +3721,6 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
 });
 }
 }
-
 function clickWhiteBishop2() {
     clickWhite = true;
     whiteMove = true;
@@ -3872,7 +3728,6 @@ function clickWhiteBishop2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteBishop2;
 }
-
 function moveWhiteBishop2(event) {
     if (clickWhite) {
     if (whiteBishop2.contains(event.target)) {
@@ -3969,7 +3824,6 @@ function moveWhiteBishop2(event) {
 });
 }
 }
-
 function clickWhiteKnight2() {
     clickWhite = true;
     whiteMove = true;
@@ -3977,7 +3831,6 @@ function clickWhiteKnight2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteKnight2;
 }
-
 function moveWhiteKnight2(event) {
     if (clickWhite) {
     if (whiteKnight2.contains(event.target)) {
@@ -4080,7 +3933,6 @@ function moveWhiteKnight2(event) {
 });
 }
 }
-
 function clickWhiteRook2() {
     clickWhite = true;
     whiteMove = true;
@@ -4088,7 +3940,6 @@ function clickWhiteRook2() {
     checkerboard.removeAttribute("onclick");
     checkerboard.onclick = moveWhiteRook2;
 }
-
 function moveWhiteRook2(event) {
     if (clickWhite) {
     if (whiteRook2.contains(event.target)) {

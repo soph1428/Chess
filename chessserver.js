@@ -2,15 +2,11 @@ const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {'pingInterval': 2000, 'pingTimeout': 600000});
-
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/chess.html");
 });
-
 app.use(express.static(__dirname));
-
 const rooms = {};
-
 io.on("connection", (socket) => {
     socket.on("new game", (game) => {
         socket.join(game);
@@ -82,7 +78,6 @@ io.on("connection", (socket) => {
     });
 });
 });
-
 server.listen(process.env.PORT || 5500, "0.0.0.0", () => {
     console.log("listening on server");
 });
