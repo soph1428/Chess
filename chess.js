@@ -1,5 +1,4 @@
 const canvas = document.getElementById("canvas");
-document.querySelector("p").style.marginTop = `${canvas.getBoundingClientRect().top + canvas.height + window.scrollY - 30}px`;
 const ctx = canvas.getContext("2d");
 //Heroku: https://quames-chess.herokuapp.com
 //Server: http://127.0.0.1:5500
@@ -7,24 +6,17 @@ var socket = io.connect("https://quames-chess.herokuapp.com");
 var codeText = document.getElementById("codetext");
 var gameCode = Math.random().toString(36).substring(7);
 function codeTextContent() {
-    requestAnimationFrame(codeTextContent);
 codeText.textContent = "Code: " + gameCode;
 }
 codeTextContent();
 var turnTimer = document.getElementById("turnTimer");
 var timer = "";
 var gameInput = document.getElementById("gameinput");
-codeText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 28}px`;
-gameInput.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 215}px`;
-codeText.style.left = `${gameInput.style.left.slice(0, gameInput.style.left.length - 2) - Math.ceil(codeText.clientWidth)}px`;
-gameInput.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 33}px`;
 var direction1 = document.getElementById("direction1");
 var codeDiv = document.getElementById("codediv");
 var whiteBase = document.getElementById("whiteBase");
 var blackBase = document.getElementById("blackBase");
 var newGame = document.getElementById("newgame");
-newGame.style.left = `${Number(gameInput.style.left.slice(0, gameInput.style.left.length - 2)) + Math.ceil(gameInput.clientWidth) + 10}px`;
-newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
 socket.emit("new game", gameCode);
 gameInput.addEventListener("keyup", (event) => {
     if (event.key == "Enter") {
@@ -36,13 +28,9 @@ var whiteMove = false;
 var blackSocket = false;
 var whiteSocket = false;
 var start = document.getElementById("start");
-start.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 55}px`;
-start.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
-turnTimer.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height / 2}px`;
-turnTimer.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
 var entertext = document.getElementById("entertext");
-entertext.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 25}px`;
-entertext.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 170}px`;
+var player1TurnText = document.getElementById("player1TurnText");
+var player2TurnText = document.getElementById("player2TurnText");
 var turn = 1;
 var tanSquare1 = document.getElementById("tanSquare1");
 var tanSquare2 = document.getElementById("tanSquare2");
@@ -108,6 +96,26 @@ var brownSquare29 = document.getElementById("brownSquare29");
 var brownSquare30 = document.getElementById("brownSquare30");
 var brownSquare31 = document.getElementById("brownSquare31");
 var brownSquare32 = document.getElementById("brownSquare32");
+layoutForSizes()
+window.addEventListener("resize", layoutForSizes)
+function layoutForSizes() {
+document.querySelector("p").style.marginTop = `${canvas.getBoundingClientRect().top + canvas.height + window.scrollY - 30}px`;
+codeText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 28}px`;
+gameInput.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 215}px`;
+codeText.style.left = `${gameInput.style.left.slice(0, gameInput.style.left.length - 2) - Math.ceil(codeText.clientWidth)}px`;
+player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 75}px`;
+player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
+player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + + 75}px`;
+player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
+gameInput.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 33}px`;
+newGame.style.left = `${Number(gameInput.style.left.slice(0, gameInput.style.left.length - 2)) + Math.ceil(gameInput.clientWidth) + 10}px`;
+newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
+start.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 55}px`;
+start.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
+turnTimer.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height / 2}px`;
+turnTimer.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
+entertext.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 25}px`;
+entertext.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 170}px`;
 tanSquare1.style.left = `${canvas.getBoundingClientRect().left + window.scrollX - 8}px`;
 tanSquare1.style.top = "0px";
 tanSquare2.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 117}px`;
@@ -236,9 +244,8 @@ brownSquare31.style.left = `${canvas.getBoundingClientRect().left + window.scrol
 brownSquare31.style.top = `437.5px`;
 brownSquare32.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 367}px`;
 brownSquare32.style.top = `437.5px`;
+}
 let checkerboard = document.getElementById("checkerboard");
-let player1TurnText = document.getElementById("player1TurnText");
-let player2TurnText = document.getElementById("player2TurnText");
 let moveWhite = false;
 if (turn == 2) {
     moveWhite = true;
@@ -577,6 +584,8 @@ socket.on("joined game", (game) => {
     start.style.display = "unset";
     entertext.style.display = "unset";
     gameCode = game.code;
+    codeTextContent()
+    layoutForSizes()
     if (game.black == socket.id) {
         white = false;
         blackSocket = true;
