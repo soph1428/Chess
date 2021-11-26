@@ -103,10 +103,18 @@ document.querySelector("p").style.marginTop = `${canvas.getBoundingClientRect().
 codeText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 28}px`;
 gameInput.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 215}px`;
 codeText.style.left = `${gameInput.style.left.slice(0, gameInput.style.left.length - 2) - Math.ceil(codeText.clientWidth)}px`;
+if (whiteBase.children.length == 0) {
 player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 75}px`;
 player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
 player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + + 75}px`;
 player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
+}
+else {
+player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
+player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 10}px`;
+player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 75}px`;
+}
 gameInput.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 33}px`;
 newGame.style.left = `${Number(gameInput.style.left.slice(0, gameInput.style.left.length - 2)) + Math.ceil(gameInput.clientWidth) + 10}px`;
 newGame.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height + 25}px`;
@@ -717,6 +725,7 @@ function randomOpponentMove() {
                     whiteBase.appendChild(pieceCaptured);
                     pieceCaptured.style.position = "unset";
                     child.appendChild(white);
+                    layoutForSizes()
                     moveWhite = false;
                 turn = 1;
                 randomOpponentMove();
@@ -740,8 +749,6 @@ function randomOpponentMove() {
                 blackBishop2.onclick = "";
                 blackKnight2.onclick = "";
                 blackRook2.onclick = "";
-        player1TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
-        player1TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player1TurnText.style.display = "unset";
         clickBlack = false;
         setTimeout(function() {
@@ -2474,8 +2481,6 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
                 whiteBishop2.onclick = "";
                 whiteKnight2.onclick = "";
                 whiteRook2.onclick = "";
-        player2TurnText.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 64}px`;
-        player2TurnText.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + 70}px`;
         player2TurnText.style.display = "unset";
         clickWhite = false;
         setTimeout(function() {
