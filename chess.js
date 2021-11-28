@@ -1,8 +1,8 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-//Heroku: https://quames-chess.herokuapp.com
+//Heroku: https://games-chess.herokuapp.com
 //Server: http://127.0.0.1:5500
-var socket = io.connect("https://quames-chess.herokuapp.com");
+var socket = io.connect("https://games-chess.herokuapp.com");
 var codeText = document.getElementById("codetext");
 var gameCode = Math.random().toString(36).substring(7);
 function codeTextContent() {
