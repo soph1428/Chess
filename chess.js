@@ -808,10 +808,10 @@ function moveBlackPawn1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn1.id,
                 "child": child.id
@@ -820,10 +820,10 @@ function moveBlackPawn1(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && tanSquare25.contains(blackPawn1)) {
+        if (!moveWhite && tanSquare25.contains(blackPawn1)) {
             socket.emit("black", {
                 "black": blackPawn1.id,
                 "child": child.id
@@ -832,13 +832,13 @@ function moveBlackPawn1(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5).toFixed(1))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) + 62.5).toFixed(1))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn1.parentElement.style.top.slice(0, blackPawn1.parentElement.style.top.length - 2)) - 62.5).toFixed(1))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn1.parentElement.style.left.slice(0, blackPawn1.parentElement.style.left.length - 2)) - 62.5).toFixed(1))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn1.id,
                 "child": child.id
@@ -864,10 +864,10 @@ function moveBlackPawn2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn2.id,
                 "child": child.id
@@ -876,10 +876,10 @@ function moveBlackPawn2(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && brownSquare25.contains(blackPawn2)) {
+        if (!moveWhite && brownSquare25.contains(blackPawn2)) {
             socket.emit("black", {
                 "black": blackPawn2.id,
                 "child": child.id
@@ -888,13 +888,13 @@ function moveBlackPawn2(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn2.parentElement.style.top.slice(0, blackPawn2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn2.parentElement.style.left.slice(0, blackPawn2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn2.id,
                 "child": child.id
@@ -920,10 +920,10 @@ function moveBlackPawn3(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn3.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn3.id,
                 "child": child.id
@@ -932,10 +932,10 @@ function moveBlackPawn3(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn3.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && tanSquare26.contains(blackPawn3)) {
+        if (!moveWhite && tanSquare26.contains(blackPawn3)) {
             socket.emit("black", {
                 "black": blackPawn3.id,
                 "child": child.id
@@ -943,13 +943,13 @@ function moveBlackPawn3(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn3.parentElement.style.top.slice(0, blackPawn3.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn3.parentElement.style.left.slice(0, blackPawn3.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn3.id,
                 "child": child.id
@@ -975,10 +975,10 @@ function moveBlackPawn4(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn4.id,
                 "child": child.id
@@ -987,10 +987,10 @@ function moveBlackPawn4(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn4.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && brownSquare26.contains(blackPawn4)) {
+        if (!moveWhite && brownSquare26.contains(blackPawn4)) {
             socket.emit("black", {
                 "black": blackPawn4.id,
                 "child": child.id
@@ -999,13 +999,13 @@ function moveBlackPawn4(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn4.parentElement.style.top.slice(0, blackPawn4.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn4.parentElement.style.left.slice(0, blackPawn4.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn4.id,
                 "child": child.id
@@ -1031,10 +1031,10 @@ function moveBlackPawn5(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn5.id,
                 "child": child.id
@@ -1043,10 +1043,10 @@ function moveBlackPawn5(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn5.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && tanSquare27.contains(blackPawn5)) {
+        if (!moveWhite && tanSquare27.contains(blackPawn5)) {
             socket.emit("black", {
                 "black": blackPawn5.id,
                 "child": child.id
@@ -1055,13 +1055,13 @@ function moveBlackPawn5(event) {
     }
 }
 //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn5.parentElement.style.top.slice(0, blackPawn5.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn5.parentElement.style.left.slice(0, blackPawn5.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn5.id,
                 "child": child.id
@@ -1087,10 +1087,10 @@ function moveBlackPawn6(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn6.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn6.id,
                 "child": child.id
@@ -1099,10 +1099,10 @@ function moveBlackPawn6(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn6.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && brownSquare27.contains(blackPawn6)) {
+        if (!moveWhite && brownSquare27.contains(blackPawn6)) {
             socket.emit("black", {
                 "black": blackPawn6.id,
                 "child": child.id
@@ -1110,13 +1110,13 @@ function moveBlackPawn6(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn6.parentElement.style.top.slice(0, blackPawn6.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn6.parentElement.style.left.slice(0, blackPawn6.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn6.id,
                 "child": child.id
@@ -1142,10 +1142,10 @@ function moveBlackPawn7(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn7.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn7.id,
                 "child": child.id
@@ -1154,10 +1154,10 @@ function moveBlackPawn7(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn7.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && tanSquare28.contains(blackPawn7)) {
+        if (!moveWhite && tanSquare28.contains(blackPawn7)) {
             socket.emit("black", {
                 "black": blackPawn7.id,
                 "child": child.id
@@ -1165,13 +1165,13 @@ function moveBlackPawn7(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn7.parentElement.style.top.slice(0, blackPawn7.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn7.parentElement.style.left.slice(0, blackPawn7.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn7.id,
                 "child": child.id
@@ -1197,10 +1197,10 @@ function moveBlackPawn8(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackPawn8.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackPawn8.id,
                 "child": child.id
@@ -1209,10 +1209,10 @@ function moveBlackPawn8(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
 && child.style.left == blackPawn8.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false && brownSquare28.contains(blackPawn8)) {
+        if (!moveWhite && brownSquare28.contains(blackPawn8)) {
             socket.emit("black", {
                 "black": blackPawn8.id,
                 "child": child.id
@@ -1220,13 +1220,13 @@ function moveBlackPawn8(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackPawn8.parentElement.style.top.slice(0, blackPawn8.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackPawn8.parentElement.style.left.slice(0, blackPawn8.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackPawn8.id,
                 "child": child.id
@@ -1272,7 +1272,7 @@ function moveBlackRook1(event) {
         && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
         && child.style.top == blackRook1.parentElement.style.top && child.id != blackRook1.parentElement.id
         && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -1296,7 +1296,7 @@ function moveBlackRook1(event) {
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
             && child.style.top == blackRook1.parentElement.style.top && child.id != blackRook1.parentElement.id
             && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     }
@@ -1305,7 +1305,7 @@ function moveBlackRook1(event) {
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1318,7 +1318,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1330,7 +1330,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1343,7 +1343,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.style.top.length - 2))
 && child.style.left == blackRook1.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1355,7 +1355,7 @@ Number(blackRook1.parentElement.style.top.slice(0, blackRook1.parentElement.styl
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1368,7 +1368,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1380,7 +1380,7 @@ Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.sty
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
     && child.style.top == blackRook1.parentElement.style.top) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                     "black": blackRook1.id,
                     "child": child.id
@@ -1393,7 +1393,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook1.parentElement.style.left.slice(0, blackRook1.parentElement.style.left.length - 2))
 && child.style.top == blackRook1.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook1.id,
                 "child": child.id
@@ -1419,12 +1419,12 @@ function moveBlackKnight1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1433,7 +1433,7 @@ function moveBlackKnight1(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1442,12 +1442,12 @@ function moveBlackKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1456,7 +1456,7 @@ function moveBlackKnight1(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1465,12 +1465,12 @@ function moveBlackKnight1(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1479,7 +1479,7 @@ function moveBlackKnight1(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1488,12 +1488,12 @@ function moveBlackKnight1(event) {
         }
     }
     //oneSpaceDown
-    if (child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight1.parentElement.style.top.slice(0, blackKnight1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight1.parentElement.style.left.slice(0, blackKnight1.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1502,7 +1502,7 @@ function moveBlackKnight1(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight1.id,
                     "child": child.id
@@ -1552,7 +1552,7 @@ function moveBlackBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -1580,18 +1580,16 @@ function moveBlackBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackBishop1.id,
                 "child": child.id
@@ -1600,14 +1598,10 @@ function moveBlackBishop1(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))
-    && child.children[0].id.includes("white") || child.children.length > 0 &&
-    Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))
-    && child.children[0].id.includes("white")) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(blackBishop1.parentElement.style.left.slice(0, blackBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop1.parentElement.style.top.slice(0, blackBishop1.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackBishop1.id,
                     "child": child.id
@@ -1657,7 +1651,7 @@ function moveBlackQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
             || event.target.parentElement.style.top == blackQueen.parentElement.style.top
@@ -1703,7 +1697,7 @@ function moveBlackQueen(event) {
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
                 && child.style.top == blackQueen.parentElement.style.top && child.id != blackQueen.parentElement.id
                 && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         }
@@ -1732,7 +1726,7 @@ function moveBlackQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
             && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
         }
         if (event.target.parentElement.style.left == blackQueen.parentElement.style.left
             || event.target.parentElement.style.top == blackQueen.parentElement.style.top
@@ -1778,19 +1772,17 @@ function moveBlackQueen(event) {
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
                 && child.style.top == blackQueen.parentElement.style.top && child.id != blackQueen.parentElement.id
                 && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1799,12 +1791,10 @@ function moveBlackQueen(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
-    child.children.length > 0 && Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("white")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackQueen.id,
                     "child": child.id
@@ -1816,7 +1806,7 @@ function moveBlackQueen(event) {
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1829,7 +1819,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1841,7 +1831,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1854,7 +1844,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.style.top.length - 2))
 && child.style.left == blackQueen.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1866,7 +1856,7 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1877,9 +1867,8 @@ Number(blackQueen.parentElement.style.top.slice(0, blackQueen.parentElement.styl
 //leftHit
 if (child.children.length > 0 && child.children[0].id.includes("white") && Number(child.style.left.slice(0, child.style.left.length - 2)) <
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2)) && child.style.top == blackQueen.parentElement.style.top) {
-    console.log(child.id, event.target.id)
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1891,7 +1880,7 @@ Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.sty
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
     && child.style.top == blackQueen.parentElement.style.top) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1904,7 +1893,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackQueen.parentElement.style.left.slice(0, blackQueen.parentElement.style.left.length - 2))
 && child.style.top == blackQueen.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackQueen.id,
                 "child": child.id
@@ -1930,10 +1919,10 @@ function moveBlackKing(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpaceUp
-        if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackKing.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -1942,10 +1931,10 @@ function moveBlackKing(event) {
     }
 }
 //oneSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == blackKing.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -1954,10 +1943,10 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
     }
 }
 //oneSpaceLeft
-if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.top == blackKing.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -1966,10 +1955,10 @@ if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, bl
     }
 }
 //oneSpaceLeftHit
-if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.top == blackKing.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -1978,10 +1967,10 @@ if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentE
     }
 }
 //oneSpaceDown
-if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == blackKing.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -1990,10 +1979,10 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
     }
 }
 //oneSpaceDownHit
-if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == blackKing.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2002,10 +1991,10 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
     }
 }
 //oneSpaceRight
-if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
+if (child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.top == blackKing.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2014,10 +2003,10 @@ if (child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, bl
     }
 }
 //oneSpaceRightHit
-if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.top == blackKing.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2026,12 +2015,12 @@ if (child.children.length > 0 && child.style.left == `${Number(blackKing.parentE
     }
 }
 //diagonalSpaceUp
-if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+if (child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+|| child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2040,12 +2029,12 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
     }
 }
 //diagonalSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("white")) {
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px` && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2054,12 +2043,12 @@ if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentEl
     }
 }
 //diagonalSpaceDown
-if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+if (child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+|| child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2068,12 +2057,12 @@ if (child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blac
     }
 }
 //diagonalSpaceDownHit
-if (child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("white")
-|| child.children.length > 0 && child.style.top == `${Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("white")) {
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("white")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(blackKing.parentElement.style.top.slice(0, blackKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(blackKing.parentElement.style.left.slice(0, blackKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px` && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackKing.id,
                 "child": child.id
@@ -2124,7 +2113,7 @@ function moveBlackBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -2152,18 +2141,16 @@ function moveBlackBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))
             && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackBishop2.id,
                 "child": child.id
@@ -2172,19 +2159,15 @@ function moveBlackBishop2(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white") ||
-    child.children.length > 0 && Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("white")) {
-        if (child.children[0].id == event.target.id || child.id == event.target.id) {
-            if (moveWhite === false) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(blackBishop2.parentElement.style.left.slice(0, blackBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(blackBishop2.parentElement.style.top.slice(0, blackBishop2.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("white")) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackBishop2.id,
                     "child": child.id
                 });
             }
         }
-    }
 });
 }
 }
@@ -2203,12 +2186,12 @@ function moveBlackKnight2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
                 "child": child.id
@@ -2217,7 +2200,7 @@ function moveBlackKnight2(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight2.id,
                     "child": child.id
@@ -2226,12 +2209,12 @@ function moveBlackKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
                 "child": child.id
@@ -2240,7 +2223,7 @@ function moveBlackKnight2(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight2.id,
                     "child": child.id
@@ -2249,12 +2232,12 @@ function moveBlackKnight2(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
                 "child": child.id
@@ -2263,7 +2246,7 @@ function moveBlackKnight2(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight2.id,
                     "child": child.id
@@ -2272,12 +2255,12 @@ function moveBlackKnight2(event) {
         }
     }
     //oneSpaceDown
-    if (child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(blackKnight2.parentElement.style.top.slice(0, blackKnight2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(blackKnight2.parentElement.style.left.slice(0, blackKnight2.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackKnight2.id,
                 "child": child.id
@@ -2286,7 +2269,7 @@ function moveBlackKnight2(event) {
         }
         if (child.children.length > 0 && child.id == event.target.parentElement.id && event.target.id.includes("white")
         || child.children.length > 0 && child.children[0].id == event.target.id && event.target.id.includes("white")) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("blackHit", {
                     "black": blackKnight2.id,
                     "child": child.id
@@ -2332,7 +2315,7 @@ function moveBlackRook2(event) {
         && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
         && child.style.top == blackRook2.parentElement.style.top && child.id != blackRook2.parentElement.id
         && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -2356,7 +2339,7 @@ function moveBlackRook2(event) {
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
             && child.style.top == blackRook2.parentElement.style.top && child.id != blackRook2.parentElement.id
             && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     }
@@ -2365,7 +2348,7 @@ function moveBlackRook2(event) {
         if (Number(child.style.top.slice(0, child.style.top.length - 2)) < Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2378,7 +2361,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2390,7 +2373,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     if (Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2403,7 +2386,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.style.top.length - 2))
 && child.style.left == blackRook2.parentElement.style.left && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2415,7 +2398,7 @@ Number(blackRook2.parentElement.style.top.slice(0, blackRook2.parentElement.styl
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) > Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("black", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2428,7 +2411,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2440,7 +2423,7 @@ Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.sty
     if (Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
     && child.style.top == blackRook2.parentElement.style.top) {
         if (child.id == event.target.id && child.children.length == 0) {
-            if (moveWhite === false) {
+            if (!moveWhite) {
                 socket.emit("black", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2453,7 +2436,7 @@ if (child.children.length > 0 && child.children[0].id.includes("white") && Numbe
 Number(blackRook2.parentElement.style.left.slice(0, blackRook2.parentElement.style.left.length - 2))
 && child.style.top == blackRook2.parentElement.style.top && child.children[0].id.includes("white")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
-        if (moveWhite === false) {
+        if (!moveWhite) {
             socket.emit("blackHit", {
                 "black": blackRook2.id,
                 "child": child.id
@@ -2540,7 +2523,7 @@ function moveWhitePawn1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2552,7 +2535,7 @@ function moveWhitePawn1(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn1.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && brownSquare5.contains(whitePawn1)) {
@@ -2564,10 +2547,10 @@ function moveWhitePawn1(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn1.parentElement.style.top.slice(0, whitePawn1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn1.parentElement.style.left.slice(0, whitePawn1.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2596,7 +2579,7 @@ function moveWhitePawn2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2608,7 +2591,7 @@ function moveWhitePawn2(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn2.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && tanSquare5.contains(whitePawn2)) {
@@ -2620,10 +2603,10 @@ function moveWhitePawn2(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn2.parentElement.style.top.slice(0, whitePawn2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn2.parentElement.style.left.slice(0, whitePawn2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2652,7 +2635,7 @@ function moveWhitePawn3(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn3.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2664,7 +2647,7 @@ function moveWhitePawn3(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn3.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && brownSquare6.contains(whitePawn3)) {
@@ -2675,10 +2658,10 @@ function moveWhitePawn3(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn3.parentElement.style.top.slice(0, whitePawn3.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn3.parentElement.style.left.slice(0, whitePawn3.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2707,7 +2690,7 @@ function moveWhitePawn4(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2719,7 +2702,7 @@ function moveWhitePawn4(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn4.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && tanSquare6.contains(whitePawn4)) {
@@ -2731,10 +2714,10 @@ function moveWhitePawn4(event) {
     }
 }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn4.parentElement.style.top.slice(0, whitePawn4.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn4.parentElement.style.left.slice(0, whitePawn4.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2763,7 +2746,7 @@ function moveWhitePawn5(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2775,7 +2758,7 @@ function moveWhitePawn5(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn5.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && brownSquare7.contains(whitePawn5)) {
@@ -2787,10 +2770,10 @@ function moveWhitePawn5(event) {
     }
 }
 //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn5.parentElement.style.top.slice(0, whitePawn5.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn5.parentElement.style.left.slice(0, whitePawn5.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2819,7 +2802,7 @@ function moveWhitePawn6(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn6.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2831,7 +2814,7 @@ function moveWhitePawn6(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn6.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && tanSquare7.contains(whitePawn6)) {
@@ -2842,10 +2825,10 @@ function moveWhitePawn6(event) {
         }
     }
     //diagonalSpace
-if (child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn6.parentElement.style.top.slice(0, whitePawn6.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whitePawn6.parentElement.style.left.slice(0, whitePawn6.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2874,7 +2857,7 @@ function moveWhitePawn7(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn7.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2886,7 +2869,7 @@ function moveWhitePawn7(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn7.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && brownSquare8.contains(whitePawn7)) {
@@ -2897,10 +2880,10 @@ function moveWhitePawn7(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-    || child.children.length > 0 && child.style.top == `${Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+    || child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn7.parentElement.style.top.slice(0, whitePawn7.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whitePawn7.parentElement.style.left.slice(0, whitePawn7.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
     && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -2929,7 +2912,7 @@ function moveWhitePawn8(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpace
-        if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whitePawn8.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -2941,7 +2924,7 @@ function moveWhitePawn8(event) {
     }
 }
     //twoSpace
-    if (child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125}px`
+    if (child.style.top == `${parseFloat(Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
 && child.style.left == whitePawn8.parentElement.style.left)
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite && tanSquare8.contains(whitePawn8)) {
@@ -2952,10 +2935,10 @@ function moveWhitePawn8(event) {
         }
     }
     //diagonalSpace
-    if (child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-    || child.children.length > 0 && child.style.top == `${Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) - 62.5}px`
+    if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+    || child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whitePawn8.parentElement.style.top.slice(0, whitePawn8.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whitePawn8.parentElement.style.left.slice(0, whitePawn8.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
     && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -3004,7 +2987,7 @@ function moveWhiteRook1(event) {
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
                 && child.style.top == whiteRook1.parentElement.style.top && child.id != whiteRook1.parentElement.id
                 && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))) {
-                    return console.log(child.id);
+                    return;
                 }
             }
             if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -3028,7 +3011,7 @@ function moveWhiteRook1(event) {
                     && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))
                     && child.style.top == whiteRook1.parentElement.style.top && child.id != whiteRook1.parentElement.id
                     && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(whiteRook1.parentElement.style.left.slice(0, whiteRook1.parentElement.style.left.length - 2))) {
-                    return console.log(child.id);
+                    return;
                 }
             }
     }
@@ -3151,10 +3134,10 @@ function moveWhiteKnight1(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3174,10 +3157,10 @@ function moveWhiteKnight1(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3197,10 +3180,10 @@ function moveWhiteKnight1(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3220,10 +3203,10 @@ function moveWhiteKnight1(event) {
         }
     }
     //oneSpaceDown
-    if (child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.top.slice(0, whiteKnight1.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight1.parentElement.style.left.slice(0, whiteKnight1.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3284,7 +3267,7 @@ function moveWhiteBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -3312,16 +3295,14 @@ function moveWhiteBishop1(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))
             && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3332,10 +3313,8 @@ function moveWhiteBishop1(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(whiteBishop1.parentElement.style.left.slice(0, whiteBishop1.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop1.parentElement.style.top.slice(0, whiteBishop1.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite) {
                 socket.emit("whiteHit", {
@@ -3387,7 +3366,7 @@ function moveWhiteQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
             || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
@@ -3433,7 +3412,7 @@ function moveWhiteQueen(event) {
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
                 && child.style.top == whiteQueen.parentElement.style.top && child.id != whiteQueen.parentElement.id
                 && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         }
@@ -3462,7 +3441,7 @@ function moveWhiteQueen(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))
             && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         if (event.target.parentElement.style.left == whiteQueen.parentElement.style.left
             || event.target.parentElement.style.top == whiteQueen.parentElement.style.top
@@ -3508,17 +3487,15 @@ function moveWhiteQueen(event) {
                 && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
                 && child.style.top == whiteQueen.parentElement.style.top && child.id != whiteQueen.parentElement.id
                 && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3529,10 +3506,8 @@ function moveWhiteQueen(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(whiteQueen.parentElement.style.left.slice(0, whiteQueen.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteQueen.parentElement.style.top.slice(0, whiteQueen.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite) {
                 socket.emit("whiteHit", {
@@ -3660,7 +3635,7 @@ function moveWhiteKing(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
         //oneSpaceUp
-        if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
+        if (child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == whiteKing.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -3672,7 +3647,7 @@ function moveWhiteKing(event) {
     }
 }
 //oneSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.left == whiteKing.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -3684,7 +3659,7 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
     }
 }
 //oneSpaceLeft
-if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.top == whiteKing.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -3696,7 +3671,7 @@ if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, wh
     }
 }
 //oneSpaceLeftHit
-if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`
+if (child.children.length > 0 && child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`
 && child.style.top == whiteKing.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -3708,7 +3683,7 @@ if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentE
     }
 }
 //oneSpaceDown
-if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whiteKing.parentElement.style.left) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -3720,7 +3695,7 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
     }
 }
 //oneSpaceDownHit
-if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.left == whiteKing.parentElement.style.left && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -3732,7 +3707,7 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
     }
 }
 //oneSpaceRight
-if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
+if (child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.top == whiteKing.parentElement.style.top) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
@@ -3744,7 +3719,7 @@ if (child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, wh
     }
 }
 //oneSpaceRightHit
-if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
+if (child.children.length > 0 && child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
 && child.style.top == whiteKing.parentElement.style.top && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
@@ -3756,10 +3731,10 @@ if (child.children.length > 0 && child.style.left == `${Number(whiteKing.parentE
     }
 }
 //diagonalSpaceUp
-if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+if (child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+|| child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
             socket.emit("white", {
@@ -3770,10 +3745,10 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
     }
 }
 //diagonalSpaceUpHit
-if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("black")) {
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px` && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
             socket.emit("whiteHit", {
@@ -3784,10 +3759,10 @@ if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentEl
     }
 }
 //diagonalSpaceDown
-if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px`
-|| child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px`) {
+if (child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+|| child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
     if (child.id == event.target.id && child.children.length == 0) {
         if (moveWhite) {
             socket.emit("white", {
@@ -3798,10 +3773,10 @@ if (child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whit
     }
 }
 //diagonalSpaceDownHit
-if (child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5}px` && child.children[0].id.includes("black")
-|| child.children.length > 0 && child.style.top == `${Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5}px`
-&& child.style.left == `${Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5}px` && child.children[0].id.includes("black")) {
+if (child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px` && child.children[0].id.includes("black")
+|| child.children.length > 0 && child.style.top == `${parseFloat(Number(Number(whiteKing.parentElement.style.top.slice(0, whiteKing.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+&& child.style.left == `${parseFloat(Number(Number(whiteKing.parentElement.style.left.slice(0, whiteKing.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px` && child.children[0].id.includes("black")) {
     if (child.children[0].id == event.target.id || child.id == event.target.id) {
         if (moveWhite) {
             socket.emit("whiteHit", {
@@ -3854,7 +3829,7 @@ function moveWhiteBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
         if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -3882,16 +3857,14 @@ function moveWhiteBishop2(event) {
             && Number(child.style.top.slice(0, child.style.top.length - 2)) > Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) && child.id.includes("brown")
             && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
             == Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))) {
-                return console.log(child.id);
+                return;
             }
         }
     }
     children.forEach(function(child) {
     //Diagonal
-    if (Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) ||
-    Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2))) {
+    if (parseFloat(Number(Math.abs(Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))).toFixed(2)))) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3902,10 +3875,8 @@ function moveWhiteBishop2(event) {
         }
     }
     //diagonalHit
-    if (child.children.length > 0 && Number(child.style.left.slice(0, child.style.left.length - 2)) - Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black") ||
-    child.children.length > 0 && Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))
-    == Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2)) - Number(child.style.top.slice(0, child.style.top.length - 2)) && child.children[0].id.includes("black")) {
+    if (child.children.length > 0 && parseFloat(Number(Math.abs(Number(whiteBishop2.parentElement.style.left.slice(0, whiteBishop2.parentElement.style.left.length - 2)) - Number(child.style.left.slice(0, child.style.left.length - 2))).toFixed(2)))
+    == parseFloat(Number(Math.abs(Number(child.style.top.slice(0, child.style.top.length - 2)) - Number(whiteBishop2.parentElement.style.top.slice(0, whiteBishop2.parentElement.style.top.length - 2))).toFixed(2))) && child.children[0].id.includes("black")) {
         if (child.children[0].id == event.target.id || child.id == event.target.id) {
             if (moveWhite) {
                 socket.emit("whiteHit", {
@@ -3933,10 +3904,10 @@ function moveWhiteKnight2(event) {
     var children = Array.from(checkerboard.children);
     children.forEach(function(child) {
     //twoSpaceUp
-    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3956,10 +3927,10 @@ function moveWhiteKnight2(event) {
         }
     }
     //twoSpaceDown
-    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5}px`
-    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 62.5).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 125).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 62.5).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -3979,10 +3950,10 @@ function moveWhiteKnight2(event) {
         }
     }
     //oneSpaceUp
-    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) - 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -4002,10 +3973,10 @@ function moveWhiteKnight2(event) {
         }
     }
     //oneSpaceDown
-    if (child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125}px`
-    || child.style.top == `${Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5}px`
-    && child.style.left == `${Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125}px`) {
+    if (child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) + 125).toFixed(2))}px`
+    || child.style.top == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.top.slice(0, whiteKnight2.parentElement.style.top.length - 2)) + 62.5).toFixed(2))}px`
+    && child.style.left == `${parseFloat(Number(Number(whiteKnight2.parentElement.style.left.slice(0, whiteKnight2.parentElement.style.left.length - 2)) - 125).toFixed(2))}px`) {
         if (child.id == event.target.id && child.children.length == 0) {
             if (moveWhite) {
                 socket.emit("white", {
@@ -4062,7 +4033,7 @@ function moveWhiteRook2(event) {
         && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
         && child.style.top == whiteRook2.parentElement.style.top && child.id != whiteRook2.parentElement.id
         && Number(event.target.parentElement.style.left.slice(0, event.target.parentElement.style.left.length - 2)) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     if (event.target.id.includes("brown") || event.target.id.includes("tan")) {
@@ -4086,7 +4057,7 @@ function moveWhiteRook2(event) {
             && Number(child.style.left.slice(0, child.style.left.length - 2)) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))
             && child.style.top == whiteRook2.parentElement.style.top && child.id != whiteRook2.parentElement.id
             && Number(event.target.style.left.slice(0, event.target.style.left.length - 2)) < Number(whiteRook2.parentElement.style.left.slice(0, whiteRook2.parentElement.style.left.length - 2))) {
-            return console.log(child.id);
+            return;
         }
     }
     }
