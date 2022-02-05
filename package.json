@@ -2,12 +2,15 @@
   "dependencies": {
     "accepts": "^1.3.8",
     "express": "^4.17.1",
+    "fresh": "^0.5.2",
     "git": "^0.1.5",
     "inherits": "^2.0.4",
     "nodemon": "^2.0.7",
     "parseurl": "^1.3.3",
     "proxy-addr": "^2.0.7",
-    "socket.io": "^4.1.2"
+    "range-parser": "^1.2.1",
+    "socket.io": "^4.1.2",
+    "type-is": "^1.6.18"
   },
   "scripts": {
     "start": "node chessserver.js",
