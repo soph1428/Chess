@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
-const io = require("socket.io")(server, { pingTimeout: 600000});
-io.eio.pingTimeout = 600000
-io.eio.pingInterval = 5000
+const io = require("socket.io")(server, { 'pingTimeout': 600000});
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/chess.html");
 });
