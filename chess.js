@@ -28,7 +28,6 @@ var whiteMove = false;
 var blackSocket = false;
 var whiteSocket = false;
 var start = document.getElementById("start");
-var entertext = document.getElementById("entertext");
 var player1TurnText = document.getElementById("player1TurnText");
 var player2TurnText = document.getElementById("player2TurnText");
 var turn = 2;
@@ -122,8 +121,6 @@ start.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canva
 start.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
 turnTimer.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height / 2}px`;
 turnTimer.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 25}px`;
-entertext.style.top = `${canvas.getBoundingClientRect().top + window.scrollY + canvas.height - 25}px`;
-entertext.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + canvas.width + 170}px`;
 tanSquare1.style.left = `${canvas.getBoundingClientRect().left + window.scrollX - 8}px`;
 tanSquare1.style.top = "0px";
 tanSquare2.style.left = `${canvas.getBoundingClientRect().left + window.scrollX + 117}px`;
@@ -590,7 +587,6 @@ socket.on("blackWinnerBoth", () => {
 });
 socket.on("joined game", (game) => {
     start.style.display = "unset";
-    entertext.style.display = "unset";
     gameCode = game.code;
     codeTextContent()
     layoutForSizes()
@@ -638,14 +634,8 @@ socket.on("joined game", (game) => {
     tanSquare3.appendChild(whiteQueen);
     return true;
 });
-document.addEventListener("keyup", (event) => {
-    if (event.key == "Enter" && start.style.display == "unset" && gameInput !== document.activeElement) {
-        socket.emit("start game");
-    }
-});
 socket.on("started game", () => {
     start.style.display = "none";
-    entertext.style.display = "none";
     socket.off("started game");
     randomOpponentMove();
     return true;
