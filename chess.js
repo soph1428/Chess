@@ -555,10 +555,10 @@ function drawGame() {
     brownSquare30.appendChild(blackBishop1);
     //blackBishop2
     tanSquare31.appendChild(blackBishop2);
-    //blackQueen
-    tanSquare30.appendChild(blackQueen);
     //blackKing
-    brownSquare31.appendChild(blackKing);
+    tanSquare30.appendChild(blackKing);
+    //blackQueen
+    brownSquare31.appendChild(blackQueen);
 }
 socket.on("full room", () => {
     alert("Game is full.");
