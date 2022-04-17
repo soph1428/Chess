@@ -23,12 +23,17 @@ io.on("connection", (socket) => {
             }
             if (input != game && Object.keys(rooms).includes(input)) {
                 socket.join(input);
+                socket.leave(game)
                 io.to(input).emit("joined game", {
                    "black": Object.keys(rooms[input])[0],
                    "white": socket.id,
                    "code": input
                 });
+                console.log(game, input)
                 delete rooms[game][socket.id];
+                if (Object.keys(rooms[game]).length == 0) delete rooms[game]
+                io.to(game).emit(`disconnected`)
+                game = input
                 rooms[input] = {
                     [Object.keys(rooms[input])[0]]: "black",
                     [socket.id]: "white"
@@ -49,12 +54,6 @@ io.on("connection", (socket) => {
                     io.to(input).emit("whiteWinnerBoth");
                     return true;
                 });
-                socket.on("disconnect", () => {
-                    delete rooms[input][socket.id];
-                    socket.leave(game);
-                    io.to(input).emit("disconnected");
-                    console.log(rooms);
-                });
             }
         });
         socket.on("black", (piece) => {
@@ -74,6 +73,7 @@ io.on("connection", (socket) => {
         });
     socket.on("disconnect", () => {
         delete rooms[game][socket.id];
+        if (Object.keys(rooms[game]).length == 0) delete rooms[game]
         socket.leave(game);
         io.to(game).emit("disconnected");
         console.log(rooms);
